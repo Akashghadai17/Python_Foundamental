@@ -1,0 +1,145 @@
+Looping Statements
+------------------
+-If you want to execute certain statements multiple times then use looping statements
+-If you know number of iterations then use for-loop
+-If you don’t know number of iterations, but need to execute based on condition then use while loop
+
+For Loop
+---------
+-We can use for loop in 2 ways:
+  
+  -Based on group of elements(in)
+  -Based on range() function(range())
+
+For loop based on group of elements(in)
+---------------------------------------
+-If you want to access elements one by one from a group, use for loop.
+
+Example1: Print elements one by one
+    a = [8, 5, 15, 12, 9]
+    for i in a:
+        print(i)
+    
+    print('Thank you')
+
+Example2: Display even numbers
+    a = [8, 5, 15, 12, 9]
+    for i in a:
+        if i % 2 == 0:
+            print(i)
+    
+    print('Thank you')
+
+Example3: Find sum of all numbers
+    a = [8, 5, 15, 12, 9]
+    sum = 0
+    for i in a:
+        sum += i
+    print(sum)
+
+Example4: Sum of even and odd numbers
+a = [8, 5, 15, 12, 9]
+esum, osum = 0, 0
+
+for i in a:
+    if i % 2 == 0:
+        esum += i
+    else:
+        osum += i
+
+print('Even Sum is:', esum)
+print('Odd Sum is:', osum)
+
+|----------------|
+|range() Function|
+|----------------|
+-Used to generate a sequence of numbers
+Arguments:
+  Start value → Default = 0
+  Stop value
+  Step value → Default = 1
+Syntax:
+  range(start, stop, step)
+
+Examples:
+range(1, 6, 1) → 1 2 3 4 5
+range(1, 6, 2) → 1 3 5
+range(5, 1, -1) → 5 4 3 2
+range(1, 6) → 1 2 3 4 5
+range(5) → 0 1 2 3 4
+
+Example1-
+---------
+Program: Print numbers from 1 to 5
+    for i in range(1, 6):
+        print(i)
+
+Example2-
+---------
+Print in same line
+    for i in range(1, 6):
+        print(i, end='\t')
+
+Example3-
+---------
+Program: Print 1 to n
+    n = int(input('Enter any Number: '))
+    for i in range(1, n+1):
+        print(i)
+
+Example4-
+---------
+Program: Sum of even numbers from 1 to n
+
+    n = int(input('Enter any Number: '))
+    sum = 0
+    for i in range(1, n+1):
+        if i % 2 == 0:
+            sum += i
+    print(sum)
+
+
+Factorial
+------------
+Product of numbers from 1 to n is called factorial.
+
+Example:
+
+  n = 5
+  Factorial = 120 (1×2×3×4×5)
+  Program: Find factorial
+  n = int(input('Enter any Number: '))
+  fact = 1
+  for i in range(1, n+1):
+      fact *= i
+  print('Factorial is:', fact)
+
+Example-6
+---------
+Program: Count number of divisibles
+
+  n = int(input('Enter any Number: '))
+  count = 0
+  
+  for i in range(1, n+1):
+      if n % i == 0:
+          count += 1
+  
+  print('Total No. of Divisibles are:', count)
+
+Example-7
+---------
+Program: Check prime or not
+
+  n = int(input('Enter any Number: '))
+  count = 0
+  
+  for i in range(1, n+1):
+      if n % i == 0:
+          count += 1
+  
+  if count == 2:
+      print('Given Number is Prime Number')
+  else:
+      print('Given Number is not a Prime Number')
+
