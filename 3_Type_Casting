@@ -23,3 +23,9 @@ str()	            String
 list()	          List
 tuple()	          Tuple
 set()	            Set
+
+Example
+-------
+a=12.5
+b=int(a)
+print(b)
