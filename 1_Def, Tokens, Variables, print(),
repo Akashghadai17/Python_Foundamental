@@ -177,36 +177,7 @@ annualsal = 600000
 monthlysal = annualsal / 12  
 print(monthlysal) 
 
-Reading user input:
--------------------
-➔ input() function is used to get a value from user
-➔ One input() function can take only one value at a time
-➔ It always takes values in string format only
 
-Ex1: W.a.p to read ename then print empname
-  ename = input('Enter Emp Name: ')
-  print('Your Name is :', ename)
-Ex2: W.a.p to read fname, lname then find fullname
-  fname = input('Enter FirstName : ')
-  lname = input('Enter LastName : ')
-  fullname = fname + ' ' + lname
-  print(fullname)
-
-To Read Integer Values
-  Variablename = int(input('Your Message'))
-To Read Floating Values
-  Variablename = float(input('Your Message'))
-
-Ex3: W.a.p to read two integer numbers then find sum
-  a = int(input('Enter any Number : '))
-  b = int(input('Enter any Number : '))
-  sum = a + b
-  print(sum)
-Ex4: W.a.p to read 1 integer and 1 floating value then find multiplication
-  a = int(input('Enter any Number : '))
-  b = float(input('Enter any Number : '))
-  mul = a * b
-  print(mul)
 
 
 
