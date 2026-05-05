@@ -1,0 +1,215 @@
+What is Python?
+---------------
+ Python is a Functional Programming Language
+ Python is an Object-Oriented Programming Language
+ Python is a High-Level Programming Language
+ Python is a Interpreter Language
+ Python is a scripting Language
+ etc....
+
+→ Desktop App — (Object-Oriented Programming, High-Level Programming Lang)
+→ IoT — (Scripting Language, High-Level Programming Lang)
+→ Cyber Security — (Scripting Language, Functional Programming)
+→ Web Applications — (Object-Oriented Programming, Scripting Language)
+→ Data Analysis — (Functional Programming, High-Level Programming Lang)
+→ Business Analysis — (Functional Programming, High-Level Programming Lang)
+→ ML — (Functional Programming, High-Level Programming Lang)
+→ DL — (Functional Programming, High-Level Programming Lang)
+→ AI — (Functional Programming, High-Level Programming Lang)
+→ Testing Tools — (Scripting Language)
+→ AWS — (Scripting Language, High-Level Programming Lang)
+→ DevOps — (Scripting Language)
+→ Automation — (Scripting Language)
+→ VFX — (Object-Oriented Programming, High-Level Programming Lang)
+→ R&D — (Functional Programming, High-Level Programming Lang)
+
+What is Python?
+---------------
+Python is a General-Purpose Programming Language developed by Guido
+van Rossum. The First version released in 1991.
+
+Features of Python:
+-------------------
+1. Open-Source and Free
+  It is freely available on its official website
+2. Easy to Code
+  Compare to all other languages python code is very easy
+3. Extensive Standard Library
+  Python provides huge libraries so it is easy to handle code
+4. Interpreted Language
+  code is executed line by line instead of all at once
+5. Dynamically Typed Language
+  Python identifies data itself then store into variables
+
+Working with Python
+-------------------
+We can write scripts in 3 ways
+1. By using Interactive Mode
+2. By using Scripting Mode
+3. By Using IDE’s
+
+Realtime Applications by using Python:
+--------------------------------------
+ Instagram and Spotify developed by using Python
+ Netflix uses Python for Analyzing user Data
+ Google uses python for AI models
+ Daily Report automated in companies like sending emails
+ Moving data from Database-->cleaning-->loading into BI tools
+ Etc.
+
+Tokens
+------
+The elements required to develop program is called as Tokens
+Tokens are 5 types, They are
+1. Literals
+2. Constants
+3. Operators
+4. Keywords
+5. Identifiers
+
+1. Literals
+-Literals are fixed values written directly in the program.
+Types of Literals:
+------------------
+-Numeric Literals
+  Integer → 10, -5
+  Float → 10.5, 3.14
+  Complex → 2+3j
+-String Literals
+  'Hello', "Python"
+-Boolean Literals
+  True, False
+-Special Literal
+  None
+-Example:
+--------
+a = 10
+name = "AVD"
+flag = True
+
+2. Constants
+------------
+-Constants are values that do not change during program execution.
+-Python does not have true constants, but we write them in uppercase by convention.
+Example:
+PI = 3.14
+MAX_VALUE = 100
+
+3. Operators
+------------
+-Operators are symbols used to perform operations on variables and values.
+
+-Types of Operators:
+-Arithmetic Operators
+  +, -, *, /, %, //, **
+-Relational (Comparison) Operators
+  ==, !=, >, <, >=, <=
+-Logical Operators
+  and, or, not
+-Assignment Operators
+ =, +=, -=, *=, /=
+-Bitwise Operators
+ &, |, ^, ~, <<, >>
+
+4. Keywords
+-----------
+-Keywords are reserved words in Python with predefined meaning.
+-We cannot use them as variable names.
+Examples:
+-if, else, for, while, True, False, None, def, class, return
+
+5. Identifiers
+--------------
+-Identifiers are names given to variables, functions, classes, etc.
+-Rules for Identifiers:
+  Must start with a letter (a–z, A–Z) or underscore _
+  Cannot start with a number
+  Cannot use keywords
+  No special symbols (@, #, $, %)
+  Case-sensitive (name and Name are different)
+
+Variables:
+----------
+-Variable is a named memory location
+-Variables are used to store values
+-We can store values by using Assignment Operator (=)
+-Assignment Operator is also called as Right to Left operator
+
+print( ) Function
+-----------------
+→ print( ) function is used to display data
+→ In print( ) function inside of single or double quotes whatever we wrote same thing we will get as a output
+Ex:
+print('Hai')     ---> Hai  
+print("Hello")   ---> Hello  
+print('2+3')     ---> 2+3  
+
+-Consider firstname as 'AVD' and last name as 'Group' now find fullname
+firstname = 'AVD'  
+lastname = 'Group'  
+fullname = firstname + lastname  
+print(fullname) 
+
+-consider a value is 5, b value is 7.2, now find sum then print sum.
+
+a = 5  
+b = 7.2  
+sum = a + b  
+print(sum)  
+
+a = 5  
+b = 7.2  
+sum = a + b  
+print('Sum is :', sum)  
+
+a = 5  
+b = 7.2  
+sum = a + b  
+print(f'Sum is {sum}')  
+
+-Consider Annual salary is 600000, now find monthly salary
+
+annualsal = 600000  
+monthlysal = annualsal / 12  
+print(monthlysal) 
+
+Reading user input:
+-------------------
+➔ input() function is used to get a value from user
+➔ One input() function can take only one value at a time
+➔ It always takes values in string format only
+
+Ex1: W.a.p to read ename then print empname
+  ename = input('Enter Emp Name: ')
+  print('Your Name is :', ename)
+Ex2: W.a.p to read fname, lname then find fullname
+  fname = input('Enter FirstName : ')
+  lname = input('Enter LastName : ')
+  fullname = fname + ' ' + lname
+  print(fullname)
+
+To Read Integer Values
+  Variablename = int(input('Your Message'))
+To Read Floating Values
+  Variablename = float(input('Your Message'))
+
+Ex3: W.a.p to read two integer numbers then find sum
+  a = int(input('Enter any Number : '))
+  b = int(input('Enter any Number : '))
+  sum = a + b
+  print(sum)
+Ex4: W.a.p to read 1 integer and 1 floating value then find multiplication
+  a = int(input('Enter any Number : '))
+  b = float(input('Enter any Number : '))
+  mul = a * b
+  print(mul)
+
+
+
+
+
+
+
+
+
+
