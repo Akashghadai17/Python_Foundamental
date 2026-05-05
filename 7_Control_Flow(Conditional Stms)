@@ -1,0 +1,215 @@
+Control Flow Statements
+Control flow statements are used to control flow of execution
+
+Control flow statements are 3 types Types
+-----------------------------------------
+1-Conditional Stmts
+-----------------
+    if
+    if else
+    elif
+    Multiple if
+    Nested if
+2-Looping Stmts
+---------------
+    Range Based → for
+    Condition Based → while
+3-Transfer Stmts
+----------------
+    break
+    continue
+
+1. if
+------
+-If you want to execute certain statements based on condition then use if.
+Example-
+a = int(input("Enter any Number: "))
+if(a >= 5):
+    a = a + 3
+    print(a)
+Testcases-
+Input: 7 → Output: 10
+Input: 4 → Output: 4
+Input: 5 → Output: 8
+
+2. if-else
+----------
+-If you want to execute only one set out of more than two sets then use if-else.
+
+Example-1
+Q)Program: Check Even or Odd
+    n = int(input("Enter any Number: "))
+    if(n % 2 == 0):
+        print("Even Number")
+    else:
+        print("Odd Number")
+
+Example-2
+Program: Voting Eligibility
+
+    age = int(input("Enter Age: "))
+    if(age >= 18):
+        print("Eligible for vote")
+    else:
+        print("Not Eligible for vote")
+
+Example-3
+Program: Pass or Fail (3 Subjects)
+    s1 = int(input("Enter sub-1 Marks: "))
+    s2 = int(input("Enter sub-2 Marks: "))
+    s3 = int(input("Enter sub-3 Marks: "))
+    
+    if s1>=35 and s2>=35 and s3>=35:
+        total = s1 + s2 + s3
+        avg = total/3
+        print("Total is:", total)
+        print("Avg is:", avg)
+    else:
+        print("Better Luck Next Time")
+
+3. elif
+--------
+-If you want to execute only one set out of more than two sets then use elif.
+Example-1
+---------
+Program: Positive, Negative or Zero
+n = int(input("Enter any Number: "))
+if n > 0:
+    print("+ve Number")
+elif n < 0:
+    print("-ve Number")
+else:
+    print("Zero")
+
+Example-2
+----------
+Program: Biggest of 3 Numbers
+a = int(input("Enter any Number: "))
+b = int(input("Enter any Number: "))
+c = int(input("Enter any Number: "))
+
+if a>b and a>c:
+    print("Biggest Number is:", a)
+elif b>c:
+    print("Biggest Number is:", b)
+else:
+    print("Biggest Number is:", c)
+
+Example-3
+----------
+Program: Marks → Total, Avg and Grade
+s1 = int(input("Enter Sub-1 Marks: "))
+s2 = int(input("Enter Sub-2 Marks: "))
+s3 = int(input("Enter Sub-3 Marks: "))
+
+total = s1 + s2 + s3
+avg = total/3
+print("Total Marks:", total)
+print("Average:", avg)
+
+if avg >= 70:
+    print("Grade A")
+elif avg >= 60 and avg < 70:
+    print("Grade B")
+elif avg >= 50 and avg < 60:
+    print("Grade C")
+else:
+    print("Grade D")
+
+Example-4
+----------
+Program: Number to Word (1–3)
+n = int(input("Enter any Number: "))
+if n == 1:
+    print("ONE")
+elif n == 2:
+    print("TWO")
+elif n == 3:
+    print("THREE")
+else:
+    print("Invalid Choice")
+
+
+
+Mini Project – MEE HOTEL Menu
+Items:
+Idly – 60
+Dosa – 80
+Vada – 100
+Puri – 90
+
+Sample Output
+Enter your choice: 3
+Item Name: Vada
+Item Cost: 100
+Enter Quantity: 7
+Bill Amount: 700.0
+CGST 2.5%: 17.5
+SGST 2.5%: 17.5
+Total Bill: 730.0
+Code
+----
+print("Welcome to MEE HOTEL")
+print("1. IDLY - 60")
+print("2. DOSA - 80")
+print("3. VADA - 100")
+print("4. PURI - 90")
+ch = int(input("Enter your choice: "))
+if ch == 1:    
+    itemname = "IDLY"    
+    cost = 60
+elif ch == 2:    
+    itemname = "DOSA"    
+    cost = 80
+elif ch == 3:    
+    itemname = "VADA"    
+    cost = 100
+elif ch == 4:    
+    itemname = "PURI"    
+    cost = 90
+else:    
+    print("Invalid Choice")    
+    exit()
+print("Item Name:", itemname)
+print("Cost is:", cost)
+
+4. Multiple if
+--------------
+--> If you have more than one if then it is called as multiple if.
+Example
+------
+n = 5
+if n >= 3:
+    n = n + 5
+if n >= 7:
+    n = n - 2
+print(n)
+
+5. Nested if
+-----------
+--> A if inside of another if is called as nested if.
+Example1-
+---------
+Program: Check if number is positive, negative, or zero
+
+n = int(input('Enter any Number : '))
+if n != 0:
+    if n > 0:
+        print('+Ve Number')
+    else:
+        print('-Ve Number')
+else:
+    print('Given Number is Zero')
+
+Example2-
+--------
+Program: Check voting eligibility based on age
+
+age = int(input('Enter your age : '))
+if age > 0:
+    if age >= 18:
+        print('Eligible for Vote')
+    else:
+        print('Not Eligible for vote')
+else:
+    print('Invalid Age')
