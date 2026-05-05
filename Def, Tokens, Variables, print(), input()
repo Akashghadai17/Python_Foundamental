@@ -133,7 +133,11 @@ Variables:
 -Variable is a named memory location
 -Variables are used to store values
 -We can store values by using Assignment Operator (=)
--Assignment Operator is also called as Right to Left operator
+-Assignment Operator is also called as Right to Left operator.
+
+#private variable=_name
+#stongly private varibale=__name
+#Special purpose varibale=__name__
 
 print( ) Function
 -----------------
