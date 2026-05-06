@@ -1,0 +1,46 @@
+while loop
+-----------
+-  If you don't know the number of iterations, but you need to 
+  execute certain statements multiple times based on a condition, then use a while loop.
+- one time it run if under condition fail then it will stop.
+
+1. W.A.P (Write a Program) to read multiple values from user then find sum.
+    ch='y'
+    sum=0
+    while ch=='y':
+        n=int(input("Enter any number: "))
+        sum=sum+n
+        ch=input("Do you want to continue y/n : ")
+    print(sum)
+2. W.A.P to read multiple numbers from user then find sum of even numbers only
+
+    sum = 0
+    ch = 'y'
+    while ch == 'y':
+        n = int(input('Enter any Number : '))
+        if n % 2 == 0:
+            sum = sum + n
+        ch = input('Do you want to continue(y/n) : ')
+    print('Sum is : ', sum)
+3. W.A.P to read n value then find sum of all digits in a given number
+
+Input: 125
+
+Output: 8 (1 + 2 + 5)
+
+    n = 125
+    sum = 0
+    while n > 0:
+        r = n % 10
+        n = n // 10
+        sum = sum + r
+    print(sum)
+4. W.A.P to read a number then print in reverse number
+
+    n = int(input('Enter any Number : '))
+    rev = 0
+    while n > 0:
+        r = n % 10
+        n = n // 10
+        rev = rev * 10 + r
+    print('Reverse Number is : ', rev)
