@@ -1,0 +1,41 @@
+Transfer Statements
+-------------------
+-To move control from one place to another place, we need to use Transfer Statements.
+
+1. break
+--------
+-break is a keyword which is used only in loops.
+-If you want to stop iterations then use break.
+-In loops, whenever break occurs, the control stops iterations and goes outside of the loop.
+
+Example-
+for i in range(1, 6):
+    if i % 2 == 0:
+        break
+    print(i)
+print('Thank you')
+
+Output
+-------
+1
+Thank you
+
+2. continue
+-----------
+-continue is a keyword which is used only in looping statements.
+-Whenever continue occurs, it stops the current iteration and continues for the next iteration.
+
+Example-
+for i in range(1, 6):
+    if i % 2 == 0:
+        continue
+    print(i)
+print('Thank you')
+
+Output
+------
+1
+3
+5
+Thank you
+
