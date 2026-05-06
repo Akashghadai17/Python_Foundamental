@@ -1,0 +1,75 @@
+for-else
+---------
+-If a for loop is executed successfully without any break, 
+ and you want to execute some statements only then, use for-else.
+-for loop runs normally $\rightarrow$ else block runs.
+-If a break happens $\rightarrow$ else will NOT execute.
+
+Example1-(Checking if a Data File Contains Errors)
+data = [10, 20, 30, -5, 40]
+for value in data:
+    if value < 0:
+        print("Invalid data found:", value)
+        break
+    else:
+        print("All data is valid")
+Output
+------
+All data is valid
+All data is valid
+All data is valid
+Invalid data found: -5
+
+Example-2(Checking if a number exists in a list)
+---------
+a = [5, 9, 12, 8, 10]
+n = int(input('Enter any Number : '))
+for i in a:
+    if i == n:
+        print('Number is Available')
+        break
+else:
+    print('Sorry Number is not Available')
+
+Output
+------
+Enter any Number : 11
+Sorry Number is not Available
+
+Example-3(Checking Duplicate Data in Dataset)
+----------
+data = [1, 2, 3, 4, 5]
+new_value = 3
+for val in data:
+    if val == new_value:
+        print("Duplicate found")
+        break
+else:
+    print("No duplicate, safe to insert")
+
+Output
+------
+Duplicate found
+
+Example-4(Pipeline Step Validation (ETL Scenario)
+----------
+steps_status = ["success", "success", "failed", "success"]
+for step in steps_status:
+    if step == "failed":
+        print("Pipeline failed")
+        break
+else:
+    print("Pipeline executed successfully")
+
+Output
+------
+Pipeline failed
+
+
+
+Use for-else when:
+----------------------
+-> You are searching for something
+-> You want to confirm absence of a condition
+-> You need validation checks across datasets
+-> You want clean logic without extra flags
