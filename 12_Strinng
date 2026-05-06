@@ -1,0 +1,237 @@
+|Strings |
+|--------|
+-A string is simply a sequence of characters (text data).
+-Strings are immutable.
+-Python allows 4 ways to define strings, they are
+
+  1. By using Single Quotes
+    -Use for simple Text
+    Ex: s1 = ‘AVD Group’
+  2. By using Double Quotes
+    -Use double quotes When your text contains single quotes inside
+    Ex: s1 = “It’s Good Day”
+  3. By using Triple single Quotes
+    -Use for multi-line Strings
+    Ex: data = '''101,siva,50000
+                102,kiran,60000'''
+        print(data)
+  4. By using Triple Double Quotes
+     Use when you want to create document strings
+    Ex:
+      log = """ERROR: Disk full
+            Time: 10:30PM """
+      print(log)
+
+-------------
+STRING ACCESS
+-------------
+1. Display string using variable name.
+    name = "Akash"
+    print(name)
+    output
+    ------
+    Akash
+
+2. Display string character by character (using loop)
+    name = "Akash"
+    for ch in name:
+        print(ch)
+    Output
+    ------
+    A
+    k
+    a
+    s
+    h
+    
+3. Display specific character using index
+name = "Akash"
+print(name[0])  # First character
+print(name[2])  # Third character
+Output:
+-------
+A
+a
+
+4. Display part of string using slicing
+name = "Akash"
+print(name[0:3])   # From index 0 to 2
+print(name[2:])    # From index 2 to end
+Output:
+-------
+Aka
+ash
+
+Q)Write a program to read a string then print only vowels
+s1 = 'avd group'
+for i in s1:
+    if i in 'aeiou':
+        print(i,end='')
+
+Q)Write a program to read string then print only Lowercase characters
+s1 = 'AvD GRoup'
+for i in s1:
+if i>='a' and i<='z':
+print(i,end='\t')
+
+Q)Write a program to read string then print only digits
+s1 = 'A2vD GRo5u2p'
+for i in s1:
+    if i>='0' and i<='9':
+print(i,end='\t')
+
+---------------------------------------------
+#string formatting........................
+----------------------------------------------
+print("Hello {} ".format(name))
+print("Hello",name)
+print("Hello %s"%(name))
+print(f'Hello {name}')
+-------------------
+#string operations
+--------------------
+#1)concatenation...........................
+a="Akash"
+b="Ghadai"
+print("Hello "+a+" "+b)
+#2)Repetation
+print(a*5)
+#3)[]Scice................................
+print(a[3])
+#4)[:]Range slice........................
+print(a[1:3])
+print(a[:4])
+print(a[3:])
+#5)in membership..............................
+x='k' in a
+print(x) #It return true or false 
+#6)not in membership.........................
+x='k' not in a
+print(x)
+#7)string split method (IT COVERT STRING TO LIST)
+name1=a.split()
+print(name1)
+
+Built in function
+-----------------
+s = "Hello World"
+
+len(s)
+type(s)
+str(s)
+max(s)
+min(s)
+sorted(s)
+
+#String METHODS
+s = "Hello World"
+
+# capitalize() – First letter uppercase
+print(s.capitalize())          # Hello world
+
+# casefold() – Strong lowercase
+print(s.casefold())            # hello world
+
+# lower() – Convert to lowercase
+print(s.lower())               # hello world
+
+# upper() – Convert to uppercase
+print(s.upper())               # HELLO WORLD
+
+# title() – Title case
+print(s.title())               # Hello World
+
+# swapcase() – Swap cases
+print(s.swapcase())            # hELLO wORLD
+
+
+# center() – Center align
+print(s.center(20))            # '    Hello World     '
+
+# ljust() – Left align
+print(s.ljust(20))             # 'Hello World         '
+
+# rjust() – Right align
+print(s.rjust(20))             # '         Hello World'
+
+# zfill() – Zero padding
+print("42".zfill(5))           # 00042
+
+
+# find() – Find index (-1 if not found)
+print(s.find("o"))             # 4
+
+# rfind() – Last index
+print(s.rfind("o"))            # 7
+
+# index() – Find index (error if not found)
+print(s.index("W"))            # 6
+
+# count() – Count substring
+print(s.count("l"))            # 3
+
+# startswith() – Check start
+print(s.startswith("H"))       # True
+
+# endswith() – Check end
+print(s.endswith("d"))         # True
+
+
+# strip() – Remove spaces
+print("  hi  ".strip())        # hi
+
+# lstrip() – Remove left spaces
+print("  hi".lstrip())         # hi
+
+# rstrip() – Remove right spaces
+print("hi  ".rstrip())         # hi
+
+# replace() – Replace substring
+print(s.replace("World", "Python"))  # Hello Python
+
+
+# split() – Split string
+print(s.split())               # ['Hello', 'World']
+
+# join() – Join strings
+print("-".join(["Hello", "World"]))  # Hello-World
+
+# partition() – Split into 3 parts
+print(s.partition(" "))        # ('Hello', ' ', 'World')
+
+
+# isalpha() – Only letters
+print("Hello".isalpha())       # True
+
+# isdigit() – Only digits
+print("123".isdigit())         # True
+
+# isalnum() – Letters and digits
+print("Hello123".isalnum())    # True
+
+# islower() – All lowercase
+print("hello".islower())       # True
+
+# isupper() – All uppercase
+print("HELLO".isupper())       # True
+
+# isspace() – Only spaces
+print("   ".isspace())         # True
+
+# isidentifier() – Valid variable name
+print("name_1".isidentifier()) # True
+
+
+# removeprefix() – Remove prefix
+print(s.removeprefix("Hello ")) # World
+
+# removesuffix() – Remove suffix
+print(s.removesuffix("World"))  # Hello 
+
+
+# encode() – Encode string
+print(s.encode())              # b'Hello World'
+
+# maketrans() & translate() – Character replace
+table = str.maketrans("HW", "hw")
+print(s.translate(table))      # hello world
