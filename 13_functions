@@ -1,0 +1,165 @@
+Function in Python
+------------------
+- A function is a block of code used to perform a specific task.
+- It helps to reuse code and reduce repetition.Function in Python
+
+Example1(Gmean)
+-------
+def calculateGmean(a, b):
+    mean=(a*b)/(a+b)
+    print(mean)
+    
+calculateGmean(10,20)
+output
+------
+6.666666666666667
+
+Example2(isGreater)
+-------------------
+def isGreater(a, b):
+    if a > b:
+        print("a is greater than b")
+    elif a == b:
+        print("a is equal to b ")
+    else:
+        print("b is greater than a")
+        
+a=int(input("Enter a value: "))
+b=int(input("Enter b value: "))
+isGreater(a,b)
+
+pass in Function
+----------------
+- pass is a null statement.
+- It is used when no code is written inside a function or block.
+
+def greet():
+    pass
+
+Uses
+----
+- Creates empty functions temporarily
+- Avoids syntax errors
+- Used during program development
+pass does nothing when executed.
+
+-----------------------------
+Types of Functions
+------------------
+
+1. Built-in Functions
+---------------------
+Functions already available in Python.
+
+Examples:
+
+print()
+len()
+input()
+type()
+2. User-defined Functions
+----------------------------
+Functions created by the programmer using def.
+
+Example:
+
+      def greet():
+          print("Hello")
+Types Based on Arguments and Return Value
+
+3. Function without Arguments
+----------------------------
+No input values are passed.
+
+Example:
+
+      def hello():
+          print("Hello")
+      
+      hello()
+
+4. Function with Arguments
+----------------------------
+Input values are passed to the function.
+
+Example:
+
+      def add(a, b):
+          print(a + b)
+      
+      add(2, 3)
+
+5. Function without Return Value
+----------------------------------
+Function does not return anything.
+
+Example:
+
+def show():
+    print("Python")
+
+6. Function with Return Value
+------------------------------
+-Function returns a value using return.
+-For storing the data in a varibale use return type.
+Example:
+
+      def square(x):
+          return x * x
+      
+      c=square(4)
+      print(c)
+Types of Arguments
+-------------------
+7. Required (Positional) Arguments
+-----------------------------------
+- Arguments must be passed in correct order.
+
+        def sub(a, b):
+            print(a - b)
+        
+        sub(10, 5)
+
+8. Default Arguments
+--------------------
+- Arguments have default values.
+
+        def greet(name="Akash"):
+            print(name)
+        
+        greet()
+
+9. Keyword Arguments
+--------------------
+- Arguments passed using parameter names.
+
+        def student(name, age):
+            print(name, age)
+        
+        student(age=20, name="Rahul")
+
+10. Variable Length Arguments (*args)  -For Tuple
+-------------------------------------
+- Used when number of arguments is unknown.
+- It create a tuple.
+        def total(*num):
+            print(type(num))
+            print(sum(num))
+        total(1, 2, 3)
+        
+        output
+        ------
+        <class 'tuple'>
+        6
+
+11. Keyword Variable Length Arguments (**kwargs) -For Dictionary
+-----------------------------------------------
+- Used to pass multiple keyword arguments.
+
+        def details(**name):
+            print("First Name : ",name["fname"],name["lname"])
+        
+        details(fname="Akash", lname="Ghadai")
+        Output
+        -----
+        First Name :  Akash Ghadai
