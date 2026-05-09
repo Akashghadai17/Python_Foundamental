@@ -128,6 +128,14 @@ Examples:
   No special symbols (@, #, $, %)
   Case-sensitive (name and Name are different)
 
+Identifier Rules in Python 
+-  Must start with a letter or _
+-  Cannot start with a number
+-  Can contain letters, numbers, _
+-  No spaces or special symbols (@ # $ %)
+-  Cannot use Python keywords (if, for, class)
+-  Python identifiers are case-sensitive (name and Name are different)
+
 Variables:
 ----------
 -Variable is a named memory location
