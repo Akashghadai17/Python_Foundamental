@@ -196,6 +196,16 @@ print(s.split())               # ['Hello', 'World']
 # join() – Join strings
 print("-".join(["Hello", "World"]))  # Hello-World
 
+a="avd"
+b="group"
+c=a.join(b)
+print(c)
+
+output
+------
+gavdravdoavduavdp
+
+
 # partition() – Split into 3 parts
 print(s.partition(" "))        # ('Hello', ' ', 'World')
 
