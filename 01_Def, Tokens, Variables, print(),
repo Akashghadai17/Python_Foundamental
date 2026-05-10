@@ -144,8 +144,8 @@ Variables:
 -Assignment Operator is also called as Right to Left operator.
 
 #private variable=_name
-#stongly private varibale=__name
-#Special purpose varibale=__name__
+#stongly private variable=__name
+#Special purpose variable=__name__
 
 print( ) Function
 -----------------
