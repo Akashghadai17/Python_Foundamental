@@ -132,6 +132,9 @@ lst = [1, 2, 3, 4, 5]
 # len() – Number of elements
 print(len(lst))                # 5
 
+# list() – Convert to list
+print(list("abc"))             # ['a', 'b', 'c']
+
 # type() – Type of variable
 print(type(lst))               # <class 'list'>
 
@@ -146,9 +149,6 @@ print(sum(lst))                # 15
 
 # sorted() – Returns sorted list
 print(sorted(lst))             # [1, 2, 3, 4, 5]
-
-# list() – Convert to list
-print(list("abc"))             # ['a', 'b', 'c']
 
 # any() – True if any element is True
 print(any(lst))                # True
