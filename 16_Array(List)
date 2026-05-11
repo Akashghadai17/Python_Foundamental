@@ -1,0 +1,268 @@
+Array
+-----
+- A Group of homogenous (same datatype) elements which we can store in a
+  single variable is called as Array.
+- In Python we don’t have direct arrays, but we can get it by using
+1. List
+2. Array module
+3. Numpy Arrays
+
+1. List
+-------
+- List is a Data Structure which is used to store group of same or different type
+  of elements
+- List we can declare by using [ ]
+- List is mutable.
+
+Indexing
+--------
+- To access elements, Python provides two types of indexes:
+- Forward Index: Starts with 0.
+- Backward / Reverse Index: Starts with -1 from the last element onwards.
+Eg.
+---
+ 0   1   2   3   4
+[10, 20, 30, 40, 50]
+ -5  -4  -3  -2  -1
+
+Displaying List Data
+--------------------
+There are four primary ways to display list data:
+1)Print all elements at once:
+  print(a)
+2)Print elements one by one using a for loop:
+  for i in a:
+    print(i)
+3)Print specific elements using index numbers:
+    print(a[3])
+4)Display part of data using Slicing.
+    Syntax: [start : End : step]
+    Examples:
+    a1[2:5] - returns elements at index 2, 3, and 4.
+    a1[::-1] - returns all elements in reverse order.
+    
+Modifying List Elements
+-----------------------
+- To modify an element, use the index number:
+- Syntax: listname[indexno] = value
+Example:
+a1 = [5, 9, 12, 7, 20]
+a1[1] = 25  # Changes 9 to 25
+
+Example approch one using for else:
+-----------------------------------
+l=[10,20,30,40,50,60]
+n=int(input("Enter the number: "))
+for i in range(len(l)):
+    if l[i]==n:
+        m=int(input("Enter the number for changing: "))
+        l[i]=m
+        break
+else:
+    print("Not found!")
+    
+print(*l)
+output
+------
+Enter the number: 20
+Enter the number for changing: 2
+10 2 30 40 50 60
+
+Using if else
+-------------
+l=[10,20,30,40,50,60]
+n=int(input("Enter the number: "))
+if n in l:
+    for i in range(len(l)):
+        if l[i]==n:
+            m=int(input("Enter the number for changing: "))
+            l[i]=m
+            break
+else:
+    print("Not found!")
+print(*l)
+
+Output
+------
+Enter the number: 11
+Not found!
+10 20 30 40 50 60
+
+using string data
+-----------------
+order=['idly','Puri','Vada']
+oldname=input("Enter item name to modify: ")
+if oldname in order:
+    for i in range(len(order)):
+        if order[i]==oldname:
+            neworder=input("Enter new item for modifying your oder: ")
+            order[i]=neworder
+else:
+    print("Item not found!")
+print(*order)
+
+Output
+------
+Enter item name to modify: Puri
+Enter new item for modifying your oder: Uthopum
+idly Uthopum Vada
+
+#creating a list
+name=["Akash","Alok","Abhijeet","Pranaya","Apu"]
+title=["Ghadai","Purohit","Panda","Bisoyee","Nayak"]
+
+#LIST OPERATIONS 
+# 1) CONCATENATION
+print(name+title)
+#2 )REPETITION
+print(name*3)
+#3 )[]SCICE
+print(name[2])
+#4 )[:]RANGE
+print(name[:4])
+#5 )IN MEMBERSHIP
+print("Akash" in name)
+#6 )NOT IN MEMBER
+print("Akash" not in name)
+
+
+#BUILT IN FUNCTIONS COMMON TO LISTS 
+lst = [1, 2, 3, 4, 5]
+
+# len() – Number of elements
+print(len(lst))                # 5
+
+# type() – Type of variable
+print(type(lst))               # <class 'list'>
+
+# max() – Maximum value
+print(max(lst))                # 5
+
+# min() – Minimum value
+print(min(lst))                # 1
+
+# sum() – Sum of elements
+print(sum(lst))                # 15
+
+# sorted() – Returns sorted list
+print(sorted(lst))             # [1, 2, 3, 4, 5]
+
+# list() – Convert to list
+print(list("abc"))             # ['a', 'b', 'c']
+
+# any() – True if any element is True
+print(any(lst))                # True
+
+# all() – True if all elements are True
+print(all(lst))                # True
+
+# enumerate() – Index with value
+print(list(enumerate(lst)))    # [(0,1), (1,2), (2,3), (3,4), (4,5)]
+
+#List Methods
+lst = [1, 2, 3, 4]
+
+# append() – Add element at end
+lst.append(5)
+print(lst)                     # [1, 2, 3, 4, 5]
+
+# extend() – Add multiple elements
+lst.extend([6, 7])
+print(lst)                     # [1, 2, 3, 4, 5, 6, 7]
+
+# insert() – Insert at position
+lst.insert(2, 99)
+print(lst)                     # [1, 2, 99, 3, 4, 5, 6, 7]
+
+# remove() – Remove first occurrence
+lst.remove(99)
+print(lst)                     # [1, 2, 3, 4, 5, 6, 7]
+
+# pop() – Remove by index (last by default)
+lst.pop()
+print(lst)                     # [1, 2, 3, 4, 5, 6]
+
+# index() – Get index of element
+print(lst.index(4))            # 3
+
+# count() – Count occurrences
+lst.append(2)
+print(lst.count(2))            # 2
+
+# sort() – Sort list
+lst.sort()
+print(lst)                     # [1, 2, 2, 3, 4, 5, 6]
+
+# reverse() – Reverse list
+lst.reverse()
+print(lst)                     # [6, 5, 4, 3, 2, 2, 1]
+
+# copy() – Copy list
+new_lst = lst.copy()
+print(new_lst)                 # [6, 5, 4, 3, 2, 2, 1]
+
+# clear() – Remove all elements
+lst.clear()
+print(lst) 
+
+
+#sort discending
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse = True)
+print(thislist)
+
+#CONVERTING ONE SEQUENCE TYPE TO ANOTHER
+#1)LIST TO TUPPLE
+tuple(name)
+print(name)
+#2)TUPPLE TO LIST
+list(name)
+print(name) 
+
+#LIST TO STRING
+#LIST JOIN METHOD
+def listtostring(s):
+    str=" "
+    return(str.join(s))
+s=["A","K","A","S","H"]
+print(listtostring(s))
+
+
+#Loop Through the Index Numbers
+#Print all items by referring to their index number:
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+  print(thislist[i])
+#Using a While Loop
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+  print(thislist[i])
+  i = i + 1
+
+#Looping Using List Comprehension
+#A short hand for loop that will print all items in a list:
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
