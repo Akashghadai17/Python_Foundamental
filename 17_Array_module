@@ -1,0 +1,64 @@
+By using Array Module
+----------------------
+- An array is a collection of elements of the same datatype stored in
+  contiguous memory locations
+- To create an array in Python, import the array module and use its array()
+  function.
+
+'i' = Integer list
+'u' = Character
+'d' = decimal
+
+import array as arr
+# creating an array with integer type
+a = arr.array('i', [1, 2, 3])
+print (a)
+# creating an array with char type
+a = arr.array('u', 'AVD')
+print (a)
+# creating an array with float type
+a = arr.array('d', [1.1, 2.2, 3.3])
+print (a)
+
+Eg.
+---
+import array
+arr=array.array('i',[10,20,30])
+print(*arr)
+
+or use alias name
+
+import array as arr
+arr=arr.array('i',[10,20,30]) #arr=module array=method
+print(*arr)
+
+INSERTION
+---------
+import array
+arr=array.array('i',[10,20,30])
+arr.append(40)
+print(*arr)
+
+-All methods,function as same as list.
+
+Operations
+---------
+Traverse − Print all the array elements one by one by using index number
+Insertion − Adds an element at the given index by using insert( ) method
+Deletion − Deletes an element at the given index by using remove( )
+Search − Searches an element using the given index or by the value.
+Update − Updates an element at the given index.
+
+Ex:
+import array as arr
+a = arr.array('i',[10, 20, 30, 15])
+#To Print all Elements
+for i in a:
+print(i,end='\t')
+#To print all elements by using index number
+for i in range(len(a)):
+print(a[i],end='\t')
+#Add 22 element
+a.append(22)
+a.insert(2,12)
+print(a)
