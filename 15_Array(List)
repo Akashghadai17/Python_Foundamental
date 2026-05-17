@@ -246,6 +246,88 @@ thislist = ["apple", "banana", "cherry"]
 [print(x) for x in thislist]
 
 
+Quetions
+--------
+Consider a=[8, 12, 7, 5, 9], now read a number then check number available or not if available then print index number
+Method 1:
+
+Python
+a = [8, 12, 7, 5, 9]
+n = int(input('Enter any Number : '))
+for i in range(len(a)):
+    if a[i] == n:
+        print(f'Index number is {i}')
+        break
+else:
+    print("sorry..! Your number not available")
+
+
+Array Operations:
+------------------
+-We can perform Operations like insert, delete, modify, searching etc..
+W.a.p to read elements from user until they said stop, now find sum of all elements
+
+Insert element 
+cart = []
+ch = 'y'
+while ch == 'y':
+    n = int(input('Enter any Number : '))
+    cart.append(n)
+    ch = input('Do you want to continue(y/n) : ')
+print(f'Your Elements are {cart}')
+print(f'Sum of all elements {sum(cart)}')
+
+Delete element
+Q)Consider a = [12, 9, 7, 10, 8], now read an element then delete it
+
+cart = [12, 9, 7, 10, 8]
+n = int(input('Enter any Number : '))
+if n in cart:
+    cart.remove(n)
+else:
+    print(f'{n} is not Available in your list')
+print(f'Your List is {cart}')
+
+Find index number
+Q)Consider a = [12, 9, 7, 10, 8], now read an element then check element is 
+ available or not if available then print index number.
+
+cart = [12, 9, 7, 10, 8]
+n = int(input('Enter any Number : '))
+if n in cart:
+    i = cart.index(n)
+    print(f'{n} available in index number {i}')
+else:
+    print(f'{n} is not Available in your list')
+
+Changing data
+Q)Consider a = [12, 9, 7, 10, 8], read an element then replace with new element.
+cart = [12, 9, 7, 10, 8]
+n = int(input('Enter any Number : '))
+if n in cart:
+    i = cart.index(n)
+    m = int(input('Enter new Element to modify : '))
+    cart[i] = m
+else:
+    print(f'{n} is not Available in your list')
+print(f'Your Elements are : {cart}')
+
+Nested List
+-------------
+--> A List inside of another list is called as nested list
+
+--> If you have table type of data then we can use nested list
+
+Ex: a = [ [101, 'vishnu', 25000.0], [102, 'Varun', 32000.0] ]
+
+      0       1         2
+0   101  'vishnu'   25000.0
+1   102  'Varun'    32000.0
+
+print(a[0])  #[101, 'vishnu', 25000.0]
+print(a[0][1]) #vishnu
+print(a[1][1]) #Varun
+
 
 
 
