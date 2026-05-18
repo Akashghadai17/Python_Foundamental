@@ -1,0 +1,30 @@
+Creating Arrays
+-We can create arrays by using array( ) function in Numpy.
+first time - pip install numpy.
+
+Eg.
+---
+import numpy as np
+a=[2,4,5,6,3,3]
+arr=np.array(a)
+print(arr)
+
+Output
+-----
+[2 4 5 6 3 3]
+
+
+List vs numpy
+=============
+List- output- [2,4,5,6,3,3]
+Nump output- [2 4 5 6 3 3]
+
+Method                    Code Example
+From a list               np.array([1,2,3])
+Multi-dim array           np.array([[1,2,3], [4,5,6]])
+Array of zeros            np.zeros((2,3))
+Array of ones             np.ones((2,3))
+Range of numbers          np.arange(0, 10, 2)
+Evenly spaced numbers     np.linspace(0, 1, 5)
+Fill Specific Element     np.full((2,3), 6)
+For Identity Matrix       np.eye(3)
