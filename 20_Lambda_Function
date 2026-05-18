@@ -1,0 +1,146 @@
+Lambda Function
+---------------
+- Its called single line function.(You can finish the function within same line).
+- If you want to write small small function so we use lambda function.
+def
+---
+-  Lambda functions are also called as anonymous functions or Name less functions.
+-- Lambda functions are declared by using lambda keyword.
+
+Example
+-------
+def sum(a,b):
+    sum=a+b
+    return sum
+
+print(sum(10,20))
+
+#USING LAMBDA FUNCTION
+res=lambda a,b:a+b
+print(res(10,20))
+
+Q1)W.a.function to find square of a given value.
+def calSquare(n):
+s = n * n
+return s
+square = calSquare(5)
+print(square)
+
+lambda
+------
+res = lambda n : n * n
+print( res(5) )
+
+Q2)--&gt; W.a.function to find Total marks of a student.
+def calTotal(a,b,c):
+t = a + b + c
+return t
+tot = calTotal(90, 80, 95)
+print(tot)
+
+Lambda
+------
+res = lambda a,b,c : a + b + c
+print( res(90,80,95) )
+
+Q3)W.a.function to check given number is Even or Odd.
+Lambda
+------
+evenOdd=lambda n:'Even' if n%2==0 else 'Odd'
+print(evenOdd(2))
+
+Q4)W.a.function to print biggest number among 2 numbers.
+Lambda
+------
+res = lambda a,b : a if a&gt;b else b
+print(res(16,9))
+
+Q5)w.a.function to print biggest number among 3 numbers.
+Lambda
+------
+res = lambda a,b,c : a if a&gt;b and a&gt;c
+else b if b&gt;c else c
+print(res(19,17,12))
+
+map( ) FUNCTION
+----------------
+- The map( ) function is used for applying some logic on each and every element available in
+  a sequence
+- map( , ) will take two parameters
+- First Parameter is Lambda Function and second parameter is sequence
+Syntax:- map(lambdafunction, list)
+
+Eg.
+sal = [7000, 5000, 12000, 8000, 6000]
+if you want to add 3000 in every sal 
+
+sal = [7000, 5000, 12000, 8000, 6000]
+newsal=[]
+for i in sal:
+    newsal.append(i+3000)
+    
+print(*newsal)
+output
+------
+10000 8000 15000 11000 9000
+
+LAMBDA
+------
+sal=[7000,1000,6000,5000]
+newSal=list(map(lambda s:s +3000,sal))
+print(*newSal)
+
+output
+------
+10000 4000 9000 8000
+
+
+filter( , ) FUNCTION
+--------------------
+-- It is used to filter Given List according to your requirement
+-- filter( , ) function is used to bring specific elements from a sequence
+-- filter( , ) will take 2 inputs
+Syntax: filter( lambda , list )
+
+Eg.
+---
+sal=[7000,1000,6000,5000]
+filterData=list(filter(lambda s:s>5000,sal))
+print(*filterData)
+
+Output
+------
+7000 6000
+
+reduce( ) FUNCTION
+------------------
+- This function can be applied on two arguments and finally it gives aggregate value in a
+  sequence
+- reduce( ) function is available in a module, i.e : functools
+- reduce( ) function by default takes group of values as a input, then it gives single value as a
+  result. but at the time of taking input it takes two values at once.
+Example
+-------
+Aggregation visual logic for list a = [5, 7, 2, 4, 3]:
+5 + 7 -> 12
+12 + 2 -> 14
+14 + 4 -> 18
+18 + 3 -> 21 (Final aggregate value)
+
+import functools
+l1=[10,20,30,10]
+res=functools.reduce(lambda p,q:p+q,l1)
+print(res)
+
+output
+------
+70
+
+
+QUESTION)Create lambda function to get Error logs information only
+logs = [&quot;ERROR: Disk full&quot;, &quot;INFO:
+Process started&quot;, &quot;ERROR: Timeout&quot;]
+errors = list(filter(lambda x: &quot;ERROR&quot;
+in x, logs))
+print(errors)
+
