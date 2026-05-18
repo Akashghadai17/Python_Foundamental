@@ -173,3 +173,46 @@ def fact(n):
         
     return fact
 print(fact(5))
+
+Recursive function
+------------------
+def factorial(n):
+    # Base case
+    if n == 1:
+        return 1
+    
+    # Recursive case
+    return n * factorial(n - 1)
+
+print(factorial(5))
+
+output- 120
+
+Example-2
+---------
+def hello(n):
+    if n == 0:   # Base case
+        return
+    
+    print("Hello")
+    hello(n - 1)   # Function calls itself
+
+hello(3)
+
+output
+------
+Hello
+Hello
+Hello
+
+Q)Sum of arrray using recursive 
+------------------------------
+l1=[10,20,30,40,50]
+def sumArr(l1):
+    if len(l1)==0:
+        return 0
+    return l1[0]+sumArr(l1[1:])
+    
+print(sumArr(l1))
+
+output-150
