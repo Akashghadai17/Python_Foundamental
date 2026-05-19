@@ -137,10 +137,29 @@ output
 70
 
 
-QUESTION)Create lambda function to get Error logs information only
-logs = [&quot;ERROR: Disk full&quot;, &quot;INFO:
-Process started&quot;, &quot;ERROR: Timeout&quot;]
-errors = list(filter(lambda x: &quot;ERROR&quot;
-in x, logs))
-print(errors)
+Ex: Parking Lot Monitor
+A sensor in each parking bay sends a signal to your system:
+1 means a car is currently parked there (Occupied).
+0 means the spot is empty (Available).
+The sensors send these signals as an array. Your job is to tell the driver exactly 
+which index (spot number) they should drive to. Drivers want the first available spot to save time.
+
+Input Array: [1, 1, 0, 1, 0, 0]
+Output: 3 (The app tells the driver: "Go to Spot #3")
+Input Array: [1, 1, 1, 1, 1, 0]
+Output: 6
+Input Array: [1, 1, 1, 1]
+Output: "Parking Full"
+
+
+def find_parking_spot(data): 
+    for i in range(len(data)): 
+        if data[i] == 0: 
+            return i + 1 
+    return "Parking Full" 
+ 
+print(find_parking_spot([1, 1, 0, 1, 0, 0])) # 3 
+print(find_parking_spot([1, 1, 1, 1, 1, 0])) # 6 
+print(find_parking_spot([1, 1, 1, 1]))       # Parking Full 	 
+
 
