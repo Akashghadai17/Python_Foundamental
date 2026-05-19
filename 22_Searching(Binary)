@@ -31,4 +31,8 @@ if res!=-1:
 else:
     print("Not found!")
 
+Time Complexity:
+O(log n) — Because you eliminate half the data in every step.
+Space Complexity: O(1)
+
 	​
