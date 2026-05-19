@@ -1,0 +1,78 @@
+- Searching means finding a specific element (called a key) in a collection of data (like an array,
+  list, or database).
+
+  Searching Algorithms:
+1. Linear Search (Sequential Search)
+2. Binary Search
+
+1. Linear Search (Sequential Search)
+------------------------------------
+- It is a basic searching algorithm. It starts at the beginning of the list and checks every single
+  element until the target is found.
+- It Checks each element one by one.
+
+Code
+----
+def linear_Search(a,element):
+    for i in a:
+        if i==element:
+            return True
+    else:
+        return False
+        
+
+a=[10,20,40,30,45,65,21,67]
+n=45
+if linear_Search(a,n):
+    print("Yes element found!")
+else:
+    print("Element not found!")
+
+Output
+------
+Yes element found!
+
+a = [5, 12, 10, 18, 7], now read an element if element available then return index
+number otherwise return -1
+
+def linear_Search(a, element):
+    for i in range(len(a)):
+        if a[i] == element:
+            return i
+    else:
+        return -1
+a = [5, 12, 10, 18, 7]
+key = int(input(&#39;Enter Element to Search : &#39;))
+res = linear_Search(a, key)
+if res != -1:
+print(f"{key} Available in index no : {res}")
+else:
+print(f"{key} Not available")
+
+Ex: Parking Lot Monitor
+A sensor in each parking bay sends a signal to your system:
+1 means a car is currently parked there (Occupied).
+0 means the spot is empty (Available).
+The sensors send these signals as an array. Your job is to tell the driver exactly which index
+(spot number) they should drive to. Drivers want the first available spot to save time.
+Input Array: [1, 1, 0, 1, 0, 0]
+Output: 2 (The app tells the driver: "Go to Spot #2")
+Input Array: [1, 1, 1, 1, 1, 0]
+Output: 5
+Input Array: [1, 1, 1, 1]
+Output: "Parking Full";
+
+def linear_Search(a):
+    for i in range(len(a)):
+        if a[i] == 0:
+            return i
+    else:
+        return -1
+a = [1, 0, 1, 1, 1]
+res = linear_Search(a)
+if res != -1:
+print(f"Parking Spot Available in Position no : {res+1}")
+else:
+print("Parking Spot Not available")
+
+    
