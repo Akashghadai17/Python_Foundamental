@@ -1,0 +1,35 @@
+Selection Sort:
+--------------
+- It is a simple comparison-based sorting algorithm. It divides the list into two parts: the sorted
+  part at the beginning and the unsorted part at the end.
+- The algorithm repeatedly selects the smallest (or largest, depending on sorting order) element
+  from the unsorted part and swaps it with the first element of the unsorted part, effectively
+  growing the sorted part by one element with each iteration.
+
+Ex:
+Consider the list [4, 2, 7, 1].
+First pass: Find the minimum element in [4, 2, 7, 1], which is 1
+Swap 1 with 4 to get [1, 2, 7, 4]
+Second pass: Find the minimum element in [2, 7, 4], which is 2
+
+Swap 2 with 2 to get [1, 2, 7, 4] (no change)
+Third pass: Find the minimum element in [7, 4], which is 4
+Swap 4 with 7 to get [1, 2, 4, 7]
+Fourth pass: The last element 7 is already in place, no need to swap
+Final sorted list: [1, 2, 4, 7].
+
+def selection_Sort(a):
+    for i in range(len(a)):
+        small_index=i
+        for j in range(i,len(a)):
+            if a[j]<a[small_index]:
+                small_index=j
+        a[i],a[small_index]=a[small_index],a[i]
+    print(a)
+
+a=[5, 7, 9, 2, 4]
+selection_Sort(a)
+
+Output
+------
+[2, 4, 5, 7, 9]
