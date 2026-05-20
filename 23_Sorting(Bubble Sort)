@@ -1,0 +1,191 @@
+Sorting
+--------
+-> Sorting means arranging data in a specific order
+-> Ascending (small → large)
+-> Descending (large → small)
+
+[ Visual Representation: Unsorted List [B, D, A, C] ───&gt; Sorted List [A, B, C, D] ]
+
+Sorting algorithms are used in many places like:
+------------------------------------------------
+1. In Schools: Sorting helps organize student names alphabetically for easy attendance
+tracking.
+2. eCommerce Sites: Sort algorithms arrange products by price, popularity, or rating to help
+customers find what they need quickly.
+3. Libraries: Books are sorted by title or author name to make it easy to locate a specific book.
+4. Databases: Sorting data in databases makes searching for information faster and more
+efficient.
+5. Sports: Sorting scores or times helps rank athletes from best to worst.
+6. Finance: Sorting stock prices or transaction records helps in analyzing financial data.
+
+Different types of sorting Techniques available Based on comparison
+--------------------------------------------------------------------
+1. Bubble sort : Compare adjacent elements
+2. Selection sort : Find min and max values then place in correct place
+3. Insertion sort : Build a &quot;sorted&quot; section one element at a time by inserting the next item into
+   its correct position
+4. Merge sort : Split the list into half part until they are single elements, then merge them back
+   together in order
+5. Quick sort : Pick a &quot;pivot&quot; element and move everything smaller to its left and everything
+   larger to its right.
+6. Heap sort : Convert the list into a &quot;Heap&quot; (a special tree structure) to easily find and &quot;pop&quot;
+   the largest value.
+
+1. Bubble Sort:
+----------------
+- It compares adjacent elements, and swaps them if they are in the wrong order.
+  The process is repeated until the list is sorted.
+Ex1:-
+Consider the list [4, 2, 7, 1].
+First pass: Compare 4 and 2, swap to get [2, 4, 7, 1]
+Compare 4 and 7, no swap
+Compare 7 and 1, swap to get [2, 4, 1, 7]
+Second pass: Compare 2 and 4, no swap
+Compare 4 and 1, swap to get [2, 1, 4, 7]
+Third pass: Compare 2 and 1, swap to get [1, 2, 4, 7]
+Fourth pass: List is already sorted, no swaps needed
+Final sorted list: [1, 2, 4, 7].
+
+Ex2:-
+[ Comprehensive Trace for List: 12, 8, 6, 4, 7 ]
+• Pass 1: [12, 8, 6, 4, 7] ➔ [8, 12, 6, 4, 7] ➔ [8, 6, 12, 4, 7] ➔ [8, 6, 4, 12, 7] ➔ [8, 6, 4, 7, 12] (Swaps: 4)
+• Pass 2: [8, 6, 4, 7, 12] ➔ [6, 8, 4, 7, 12] ➔ [6, 4, 8, 7, 12] ➔ [6, 4, 7, 8, 12] (Swaps: 3)
+• Pass 3: [6, 4, 7, 8, 12] ➔ [4, 6, 7, 8, 12] (Swaps: 1)
+• Pass 4: [4, 6, 7, 8, 12] ➔ Sorted (Swaps: 0)
+
+CODE
+----
+def bubble_Sort(a):
+    temp=0
+    swap=0
+    for j in range(len(a)):
+        for i in range(len(l1)-j-1):
+            if l1[i]>l1[i+1]:
+                temp=l1[i]
+                l1[i]=l1[i+1]
+                l1[i+1]=temp
+                swap+=1
+        print(a)    
+    return a,swap
+    
+l1=[12,8,6,4,7]
+a,s=bubble_Sort(l1)
+print(f"Array is {a} and no of swapping {s}")
+
+Output
+------
+[8, 6, 4, 7, 12]
+[6, 4, 7, 8, 12]
+[4, 6, 7, 8, 12]
+[4, 6, 7, 8, 12]
+[4, 6, 7, 8, 12]
+Array is [4, 6, 7, 8, 12] and no of swapping 8
+
+Practical Case Study: Traffic Analysis
+--------------------------------------
+A smart traffic monitoring system is installed across a city to track vehicle speeds using highway
+cameras and speed sensors. Every few minutes, the system receives vehicle speeds in random
+order from different checkpoints.
+Traffic police officials want to analyze the data quickly to identify the slowest and fastest
+vehicles on the road. Before generating reports, the system must arrange all vehicle speeds in
+ascending order.
+Your task is to sort the vehicle speeds using the Bubble Sort algorithm.
+During each pass, compare adjacent speeds and swap them if they are in the wrong order.
+Continue the process until all speeds are arranged correctly.
+
+Input Format
+------------
+The first line contains an integer n, representing
+the number of vehicles recorded.
+The second line contains n space-separated
+integers representing vehicle speeds.
+
+Constraints
+-----------
+1 <= n <= 100
+1 <= speed <= 300
+
+Sample Input
+------------
+5
+72 55 90 63 48
+
+Sample Output
+-------------
+48 55 63 72 90
+
+CODE
+----
+def bubble_Sort(l1):
+    temp=0
+    swap=0
+    for j in range(len(l1)):
+        for i in range(len(l1)-j-1):
+            if l1[i]>l1[i+1]:
+                temp=l1[i]
+                l1[i]=l1[i+1]
+                l1[i+1]=temp
+                swap+=1
+        print(l1)    
+    return l1,swap
+    
+    
+n=int(input("Enter n value: "))
+s=[]
+for i in range(n):
+    v=int(input("Enter speed: "))
+    s.append(v)
+
+x,p=bubble_Sort(s)
+print(f"Array is {x} and no of swapping {p}")
+
+OUTPUT
+------
+Enter n value: 5
+Enter speed: 144
+Enter speed: 02
+Enter speed: 33
+Enter speed: 45
+Enter speed: 14
+[2, 33, 45, 14, 144]
+[2, 33, 14, 45, 144]
+[2, 14, 33, 45, 144]
+[2, 14, 33, 45, 144]
+[2, 14, 33, 45, 144]
+Array is [2, 14, 33, 45, 144] and no of swapping 6
+
+
+
+BUBBLE SORT CODE
+---------------
+def bubble_Sort(l1):
+    temp=0
+    for j in range(len(l1)):
+        for i in range(len(l1)-j-1):
+            if l1[i]>l1[i+1]:
+                temp=l1[i]
+                l1[i]=l1[i+1]
+                l1[i+1]=temp
+           
+    return l1
+ 
+a=[199,21,344,212,33,3,45,6]   
+x=bubble_Sort(a)
+print(f"Sorted Array: {x}")def bubble_Sort(l1):
+    temp=0
+    for j in range(len(l1)):
+        for i in range(len(l1)-j-1):
+            if l1[i]>l1[i+1]:
+                temp=l1[i]
+                l1[i]=l1[i+1]
+                l1[i+1]=temp
+           
+    return l1
+ 
+a=[199,21,344,212,33,3,45,6]   
+x=bubble_Sort(a)
+print(f"Sorted Array: {x}")
+
+output
+------
+Sorted Array: [3, 6, 21, 33, 45, 199, 212, 344]
