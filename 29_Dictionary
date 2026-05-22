@@ -225,6 +225,7 @@ d = {"a": 1, "b": 2, "c": 3}
 8)sum(d.values()) #6 -sum of all values
 
 Q)Consider your cart is {1122:850.0,1162:1250.0,1231:600.0}Now find Total bill Amount.
+---------------------------------------------------(1)
 cart = {1122: 50.0, 1162: 250.0, 1231: 60.0}
 # Approach A: For Loop value gathering
 totalBill = 0
@@ -238,11 +239,111 @@ output
 -----
 Total Bill is 360.0
 360.0
-
-without loop
+----------------------------------------------------(2)
+-without loop
 cart = {1122: 50.0, 1162: 250.0, 1231: 60.0}
 totalbill=sum(cart.values())
 print(sum)
+
+-----------------------------------------------------(3)
+-Without sum function.
+cart = {1122: 50.0, 1162: 250.0, 1231: 60.0}
+total=0
+for i in cart:
+    total+=cart[i]
+print(total)
+Output
+------
+360.0
+
+Single key with multiple values
+-------------------------------
+Syntax- dictname={key:[value1,value2,value3],key:[value1,value2......]}
+Example- cart = {
+1122: ['Pendrive', 850.0],
+1221: ['Mouse', 1200.0]
+}
+
+Fetching
+--------
+for i,j in range(cart.values()):
+    print(i,j)
+Output
+------
+1122 ['Pendrive', 850.0]
+1221 ['Mouse', 1200.0]
+
+For individual of multiple values
+--------------------------------
+cart = {
+1122: ['Pendrive', 850.0],
+1221: ['Mouse', 1200.0]
+}
+for i,j in (cart.items()):
+    print(i,end=" ")
+    for x in j:
+        print(x,end=' ')
+Output
+------
+1122 Pendrive 850.0 1221 Mouse 1200.0 
+Q.# W.a.p to read multiple items
+cart = {}
+ch = "y"
+while ch == "y":
+    pid = int(input("Enter product ID : "))
+    pname = input("Enter product name : ")
+    cost = float(input("Enter Cost : "))
+    cart[pid] = [pname, cost]
+    ch = input("Do you want to continue(y/n) : ")
+print(cart)
+
+Nested Dictionary
+----------------
+- A dictionary in another dictionary is called as Nested Dictionary.
+emps = {
+    'HR': {101: 'Pavana', 102: 'Leena', 103: 'Kiran'},
+    'DE': {201: 'venkat', 202: 'vishnu'},
+    'BA': {301: 'Sharma', 302: 'Varma', 303: 'Barma'}
+}
+
+for i, j in emps.items():
+    print('\t', i)
+
+    for p, q in j.items():
+        print(p, ' ', q)
+Output
+------
+     HR
+101   Pavana
+102   Leena
+103   Kiran
+
+     DE
+201   venkat
+202   vishnu
+
+     BA
+301   Sharma
+302   Varma
+303   Barma
+
+Frequency counting:
+-------------------
+text = "apple banana apple"
+freq = {}
+for word in text.split():
+freq.setdefault(word, 0)
+print(word)
+freq[word] += 1
+print(freq)
+
+Output
+------
+apple
+banana
+apple
+{'apple': 2, 'banana': 1}
+
 
 
 
