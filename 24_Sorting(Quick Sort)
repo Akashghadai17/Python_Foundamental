@@ -1,0 +1,43 @@
+Quick Sort (Divide-and-Conquer)
+-------------------------------
+Algorithmic Execution Workflow
+ Step 1 (Pivot Selection): Consider either the first, last, or any random number as the pivot
+element.
+ Step 2 (Pointer Initialization): Initialize two pointers: the first element acts as pointer 'p';
+and the last element acts as pointer 'q'.
+ Step 3 (Scanning Loop): Pointer 'p' moves in the forward direction and checks for elements
+where p > pivot. Pointer 'q' moves in the backward direction and checks for elements where
+q &lt; pivot.
+ Step 4 (Conditionals &amp; Partitioning): If 'p' and 'q' have not crossed each other, swap the
+elements at 'p' and 'q'. If 'p' and 'q' have crossed, swap the pivot element with the element at
+'q'.
+
+Dry Run Trace Example
+---------------------
+Given initial array: [30, 45, 12, 22, 60, 20, 96, 35]
+ Let Pivot = 30. Initial indices: p points to 45, q points to 35.
+ p scans forward for &gt; 30 (stops at 45); q scans backward for < 30 (stops at 20).
+ Since p and q are not crossed, swap(p, q) -> Array becomes: [30, 20, 12, 22, 60, 45, 96, 35]
+ Resume scanning: p stops at 60; q stops at 22. Now p and q have crossed.
+ Swap pivot (30) with q (22) -> Sub-partitioned Array: [22, 20, 12] 30 [60, 45, 96, 35]
+ Recursively sorting Left sub-array [22, 20, 12] yields [12, 20, 22].
+ Recursively sorting Right sub-array [60, 45, 96, 35] yields [35, 45, 60, 96].
+Result: Combined Sorted Order = Left + Middle + Right = [12, 20, 22, 30, 35, 45, 60, 96]
+
+Code
+-----
+def quickSort(arr):
+    if len(arr)<=1:
+        return arr
+    pivot=arr[len(arr)//2]
+    left=[x for x in arr if x<pivot]
+    middle=[x for x in arr if x==pivot]
+    right=[x for x in arr if x>pivot]
+    return quickSort(left)+middle+quickSort(right)
+    
+a=quickSort([30,45,12,22,60,20,96,35])
+print(a)
+
+Output
+------
+[12, 20, 22, 30, 35, 45, 60, 96]
