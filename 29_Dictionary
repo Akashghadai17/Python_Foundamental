@@ -1,0 +1,250 @@
+Dictionary
+----------
+- A Dictionary is a built-in Python data structure that stores data collections in key-value pairs.
+- Each key is uniquely mapped to a specific value, providing optimized performance for data
+  search and retrieval operations.
+Key Characteristics:
+---------------------
+Unique Keys: Keys must be completely unique and cannot contain duplicates within a
+             single dictionary setup.
+Duplicate Values Allowed: Values can contain duplicate items across multiple distinct
+                          keys.
+Syntax-
+      dictname={key:value,key:value...........}
+Example- 
+      emps = {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+
+Hashing
+-------
+- Hashing is used in a dictionary to make data storage and retrieval very fast.
+- In a programming language like Python, a dictionary stores data as key → value pairs.
+- Hashing helps convert the key into a number (index) so the value can be stored and found quickly.
+
+emps = {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+h(key)=key%10 (10 how many keys)
+h(101)=101 % 10=1
+h(102)=102 % 10=2
+h(103)=104 % 10=4
+
+0[          ]
+1[ Vishnu   ]
+2[ Akash    ]
+3[ Naveen   ]
+4[          ]
+5[          ]
+6[          ]
+7[          ]
+8[          ]
+9[          ]
+
+- Internaly it never store in the sequntial order. It will store based on the case.
+- Real time randomly data are comming perform the opetions and values are store into the bucket.
+- All these opetions python do internally we don't do it.
+
+Searching/Fetching the data
+---------------------------
+- Get 102 record
+- h(102) --> 102 % 10 =2 (Search 2 number bucket).
+TC= 0(1)
+- So hashing technique is easy to store and fetch the data.
+
+Add/Modify element
+------------------
+emps = {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+
+Syntax- Dictname[key]=value
+  -If key available then value is updated.
+  -If key not available then value is added.
+
+eg.
+  emps[104]='Ghadai'
+  emps[101]='Pradhan'
+0[          ]
+1[ Pradhan  ]
+2[ Akash    ]
+3[ Naveen   ]
+4[ Ghadai   ]
+5[          ]
+6[          ]
+7[          ]
+8[          ]
+9[          ]
+
+Display Dictionary Elements
+---------------------------
+Method 1: Printing the Entire Collection Structure.
+      emps = {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+      print(emps)
+      # Output: {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+
+Method 2: Display specific element by using key.
+      emps = {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+      print(emps[101]) #Vishnu
+
+Method 3: Display one by one using for loop.
+      1)Only keys
+      sData={"Akash":'73733773',"Prakash":"23224222"}
+      for i in (sData.keys()):
+          print(i)
+      Output
+      ------
+      Akash
+      Prakash
+
+          OR
+      sData={"Akash":'73733773',"Prakash":"23224222"}
+      for i in (sData):
+          print(i)
+      Output
+      ------
+      Akash
+      Prakash
+
+      2)Only values
+      --------------
+      sData={"Akash":'73733773',"Prakash":"23224222"}
+      for i in (sData.values()):
+          print(i)
+      Output
+      ------
+      73733773
+      23224222
+
+      3)Key and value
+      ---------------
+      sData={"Akash":'73733773',"Prakash":"23224222"}
+      for i,j in (sData.items()):
+          print(i,j)
+      Output
+      ------
+      Akash 73733773
+      Prakash 23224222
+
+        OR
+        sData={"Akash":'73733773',"Prakash":"23224222"}
+        for i in (sData):
+            print(i,sData[i])
+        Output
+        ------
+        Akash 73733773
+        Prakash 23224222
+
+Methods
+-------
+d = {"a": 1, "b": 2, "c": 3}
+
+1)d.keys()  ->dict_keys(['a', 'b', 'c']) #DIsplay keys
+2)d.values() ->dict_values([1, 2, 3] #Display values
+3)d.items() ->dict_items([('a', 1), ('b', 2), ('c', 3)]) #Display all key and value
+4)d.get(key) ->1 #Get value of key 
+5)d.update({key: newvalue}) ->d.update({"d": 4}) - dict_items([('a', 1), ('b', 2), ('c', 3), ('d', 4)])
+6)pop(key) -eg. d.pop('a') ->2 #Remove 2 key with value
+7)d.popitem() ->Remove last key and value. dict_items([('a', 1), ('b', 2)])
+8)d.setdefault(key,value) ->print(d.setdefault("e", 5)) - dict_items([('a', 1), ('b', 2), ('c', 3), ('e', 5)])
+                          -Because "e" was not there, it gets added.
+9)copy()
+--------
+d = {"a": 1, "b": 2, "c": 3}
+e=d.copy()
+print(e.items())
+Output
+------
+dict_items([('a', 1), ('b', 2), ('c', 3)])
+10)clear()
+----------
+d = {"a": 1, "b": 2, "c": 3}
+d.clear()
+print(d.items())
+Output
+------dict_items([]) #Empty
+11)fromkeys()
+--------------
+- Update all values using keys
+d = {"a": 1, "b": 2, "c": 3}
+print(d.fromkeys(["a", "b", "c"], 0))
+Output
+------
+{'a': 0, 'b': 0, 'c': 0}
+
+Q)W.a.p read p.id and cost then store into dictionary.
+  Code
+  ----
+products={}
+pid=int(input("Enter pid : "))
+cost=float(input("Enter cost : "))
+products[pid]=cost
+print(products.items())
+
+Output
+------
+Enter pid : 10003
+Enter cost : 25421.01
+dict_items([(10003, 25421.01)])
+
+Q)W.a.p to read multiple pid,cost then store into cart until user says stop.
+Code
+----
+n=int(input("Enter how many data you want to store: "))
+products={}
+for i in range(n):
+    pid=int(input("Enter pid : "))
+    cost=float(input("Enter cost : "))
+    products[pid]=cost
+
+print(products.items())
+Output
+------
+Enter how many data you want to store: 2
+Enter pid : 101
+Enter cost : 12000.01
+Enter pid : 102
+Enter cost : 13000.00
+dict_items([(101, 12000.01), (102, 13000.0)])
+
+      OR CODE
+      
+products = {}
+ch = 'y';
+while ch == 'y':
+    pid = int(input(&#39;Enter product Id : &#39;))
+    cost = float(input('Enter Cost : '))
+    products[pid] = cost
+    ch = input('Do you want to continue(y/n) : ').lower()
+
+Built-in functions
+-------------------
+d = {"a": 1, "b": 2, "c": 3}
+
+1)len(d) #3 -Returns number of key-value pairs
+2)type(d) #<class 'dict'> - Returns the type of object
+3)str(d) # "{'a': 1, 'b': 2, 'c': 3}" - Converts dictionary to string format.
+4)dict() # {} - Creates a new empty dictionary
+5)max(d) # 'c' - Returns the largest key (based on ASCII/lexicographic order)
+6)min(d) # 'a' - Returns the smallest key
+7)sorted(d) # ['a', 'b', 'c'] - Returns sorted list of keys
+8)sum(d.values()) #6 -sum of all values
+
+Q)Consider your cart is {1122:850.0,1162:1250.0,1231:600.0}Now find Total bill Amount.
+cart = {1122: 50.0, 1162: 250.0, 1231: 60.0}
+# Approach A: For Loop value gathering
+totalBill = 0
+for i in cart.values():
+    totalBill += i
+print(f"Total Bill is {totalBill}")
+# Approach B: Built-in Python Functional Sum
+totalBill = sum(cart.values())
+print(totalBill)
+output
+-----
+Total Bill is 360.0
+360.0
+
+without loop
+cart = {1122: 50.0, 1162: 250.0, 1231: 60.0}
+totalbill=sum(cart.values())
+print(sum)
+
+
+
+
+  
