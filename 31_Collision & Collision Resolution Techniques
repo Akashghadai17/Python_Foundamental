@@ -1,0 +1,65 @@
+Collision & Collision Resolution Techniques
+-------------------------------------------
+What is Collision?
+When two keys produce same index.
+Ex: h(x) = x (mod 5) 
+For:
+Key: 10 -> Hash Value: 0
+Key: 15 -> Hash Value: 0
+Both go to index 0.This is called Collision.
+
+Consider a = [15, 10, 12, 20], size is 5
+h(15) = 15 (mod 5)-> 0
+h(10) = 10 (mod 5)-> 0-
+  > In 0 index already 15 available
+  -> So it is called as collision
+
+Table Visual:
+0 | 15 |
+1 |    |
+2 |    |
+3 |    |
+4 |    |
+
+Collision Handling Techniques
+-----------------------------
+Two main techniques:
+    1)Chaining
+    2)Open Addressing
+
+1)Chaining
+----------
+Hash Function: h(k) = k (mod m)
+Example: m = 5, Keys: 10, 15, 20, 12
+Table:
+| Index | Table |
+| :---: | :---  |
+| 0     | [10] -> [15] -> [20] |
+| 1 | — |
+| 2 | [12] |
+| 3 | — |
+| 4 | — |
+How it works: All keys that hash to the same index are stored in a linked list.
+
+- in index of 0 have 3 values , so every values have key:value.
+using hash(value)-> key generated.
+eg. If you store 10 use:- hash(10)
+
+-So this procss called Chaining technique.
+
+2. Open Addressing
+-------------------
+2.1 Linear Probing
+-------------------
+-If the collision occur then it can't create linked list in a specific index.
+-It find next index free or not if free the store the data .
+
+Example: m = 5, Keys: 10, 15, 20, 12
+Table:
+| Index | Table |
+| :---: | :---: |
+| 0     | 10    |
+| 1     | 15    |
+| 2     | 12    |
+| 3     | 20    |
+| 4     | —     |
