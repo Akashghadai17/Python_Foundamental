@@ -1,0 +1,160 @@
+Hashing
+---------
+- Hashing is a technique used to:
+    Store data quickly
+    Search data quickly
+    Access data in near constant time
+-It converts data into a unique numeric value called a hash value using a hash
+function.
+
+- Hashing helps convert the key into a number (index) so the value can be stored and found quickly.
+
+emps = {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+h(key)=key%10 (10 how many keys)
+h(101)=101 % 10=1
+h(102)=102 % 10=2
+h(103)=104 % 10=4
+
+0[          ]
+1[ Vishnu   ]
+2[ Akash    ]
+3[ Naveen   ]
+4[          ]
+5[          ]
+6[          ]
+7[          ]
+8[          ]
+9[          ]
+
+- Internaly it never store in the sequntial order. It will store based on the case.
+- Real time randomly data are comming perform the opetions and values are store into the bucket.
+- All these opetions python do internally we don't do it.
+
+- Buesed on Hash Function the elements are store.
+
+Imagine a library:
+-------------------
+Instead of searching every book one by one,
+the librarian stores books in racks using a code.
+Book Name Rack
+Python 5
+Java 2
+SQL 8
+
+- If you want Python book: Go directly to Rack 5 No need to search all racks
+- This direct access concept is called Hashing.
+
+Important Terms
+Term                  Meaning
+Hash Function         Converts key into index
+Hash Value            Output of hash function
+Hash Table            Data structure storing values
+Key Input data
+Collision             Two keys getting same index
+Load factor           How much memory filled -> load factor = no of elements/size
+
+Hash Function
+-------------
+- A hash function converts a key into an array index position in a hash table
+  Example: h(x) =x mod10
+  Incase key=25 then index = 25 mod 10 -> 5
+
+So data is stored at index 5.
+
+Hash Table structure
+--------------------
+emps = {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+h(key)=key%10 (10 how many keys)
+h(101)=101 % 10=1
+h(102)=102 % 10=2
+h(103)=104 % 10=4
+
+0[          ]
+1[ Vishnu   ]
+2[ Akash    ]
+3[ Naveen   ]
+4[          ]
+5[          ]
+6[          ]
+7[          ]
+8[          ]
+9[          ]
+
+Why Hashing is Fast?
+--------------------
+- Without hashing:
+ Search = Linear Search
+ Time Complexity = O(n)
+- With hashing: Direct access so Average Time Complexity = O(1)
+
+Applications of Hashing
+------------------------
+Application               Usage
+Dictionaries           Key-value storage
+Password Storage       Secure login
+Database Indexing     Faster queries
+Caching               Fast retrieval
+Searching             Quick lookup
+
+Python hash( ) Function
+-----------------------
+print(hash(10)) ->  10
+print(hash("python"))-> 6014547570927392754
+print(hash((1, 2, 3))) -> 529344067295497451
+-> Note: Hashing makes searching very fast.
+
+Common Hashing Techniques
+-------------------------
+1. Division Method (k % n) -> Most Popular one
+2. Mod 10 Method
+3. Mid-Square Method -> square the number then take middle number
+4. Folding Method -> Split number then add it
+
+1. Division Method (k % n) 
+---------------------------
+emps = {101: 'Vishnu', 102: 'Akash';, 103: 'Naveen'}
+h(key)=key%10 (10 how many keys)
+h(101)=101 % 10=1
+h(102)=102 % 10=2
+h(103)=104 % 10=4
+
+0[          ]
+1[ Vishnu   ]
+2[ Akash    ]
+3[ Naveen   ]
+4[          ]
+5[          ]
+6[          ]
+7[          ]
+8[          ]
+9[          ]
+
+- If more data are comming the bucket size will incresess.
+
+2. Mod 10 Method 
+----------------
+- Size is fixed.(10)
+h(key)=key%10 (10 how many keys)
+h(101)=101 % 10=1
+h(102)=102 % 10=2
+h(103)=104 % 10=4
+
+3. Mid-Square Method
+--------------------
+{key} = 12 -> 12^2 -> 144 -> {4}
+- Buesd on midle element it become index no eg.144 ->mid=4
+  -> Middle element so place value in Bucket : 4
+  
+-> 1232 -> 2, 3, 23- 
+  > place value in any bucket 2 or 3 or 23 depends on table size
+  
+->2^2 -> 4
+->5^2 -> 25 -> 2 \ 5
+-> No middle number so place in either 2 or 5
+
+Folding Method
+---------------
+key = 123251 -> 12+32+51 = 95
+-When table size is 10 ,Then 95 mod 10 -> 5
+
+-Acording to all the first method Division Method (k % n) is best and easy.
