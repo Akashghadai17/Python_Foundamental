@@ -63,3 +63,534 @@ Table:
 | 2     | 12    |
 | 3     | 20    |
 | 4     | —     |
+
+Quadratic Probing
+-----------------
+Quadratic Probing is a method used in hashing to find a new place when collision happens.
+
+-Collision
+When two values want to go to the same index.
+
+Formula
+=========
+index=(hash+i**2)mod size
+
+Jump pattern:
+
+1² = 1
+2² = 4
+3² = 9
+
+Example
+--------
+Table size = 10
+Hash function:
+h(x)=xmod10
+
+Insert:
+23 → index 3
+43 → index 3 (collision)
+
+Now move using squares:
+3 + 1² = 4
+Place 43 at index 4.
+
+Double Hashing
+--------------
+-Double Hashing is a collision handling method in hashing.
+-When collision happens, it uses another hash function to find the next empty position.
+
+Formula:
+
+index=(h1(x)+i⋅h2(x))mod m
+
+Example
+-------
+Take:
+m=10
+
+First hash:
+h1(x)=xmod10
+
+Second hash:
+
+h2(x)=7−(xmod7)
+Insert 43
+
+Step 1:
+
+h1(43)=43mod10=3
+Index 3 is full ❌
+
+Step 2:
+
+h2(43)=7−(43mod7)
+=7−1=6
+
+Step 3:
+(3+1×6)mod10=9
+So 43 goes to index 9 ✅
+
+
+Load Factor in Hashing
+----------------------
+ Load factor tells us: How full the hash table is
+ It helps decide when the hash table should be resized (rehashing).
+Formula: Load Factor (λ)= Number of Elements/Table Size
+λ= n/m
+Where:
+n = number of inserted elements
+m = size of hash table
+
+Suppose hash table size: m=10
+Inserted elements: n=3
+Then: λ=3/10 --> 0.3
+Meaning: Table is 30% filled
+Incase Inserted elements n = 7
+Then: λ=7/10 --> 0.7
+Meaning Table is 70% full, need rehashing
+
+Chaining Technique Program
+--------------------------
+If you want to develop same program by using functions
+Then for every operation we need to create a separate functions
+1. Create function to get hashtable -> def hashtable(size)
+2. Create function to find key value -> def hashfunction(element,size)
+3. Create function to insert value -> def insert(table, element)
+4. Create function to display value -> def display(table)
+
+def hashTable(size):
+    return [[] for _ in range(size)]
+def hashFunction(size,element):
+    return element % size
+def insert(table,element):
+    size=len(table)
+    key=hashFunction(size,element)
+    table[key].append(element)
+def display(table):
+    for i,j in enumerate(table):
+        print(f"Bucket : {i} {j}")
+        
+table=hashTable(5)
+insert(table,12)
+insert(table,22)
+insert(table,15)
+display(table)
+
+Output
+------
+Bucket : 0 [15]
+Bucket : 1 []
+Bucket : 2 [12, 22]
+Bucket : 3 []
+Bucket : 4 []
+
+
+AESY CODE
+---------
+def hashTable(size):
+    return [[] for _ in range(size)]
+def insert(table,element):
+    size=len(table)
+    key=element % size
+    table[key].append(element)
+def display(table):
+    for i in table:
+        print(i)
+        
+table=hashTable(5)
+insert(table,12)
+insert(table,22)
+insert(table,15)
+display(table)
+
+Output
+------
+[15]
+[]
+[12, 22]
+[]
+[]
+
+W.a.p to insert element in hashtable.
+l1=[10,5,7,3,4]
+size=len(l1)
+hashtable=[None]*size
+for value in l1:
+    index=value % size
+    hashtable[index]=value
+print(hashtable)
+
+output
+------
+[5, None, 7, 3, 4]
+
+
+Shortly code of chaining 
+-----------------------
+size=int(input("Enter size of bucket: "))
+bucket=[[] for _ in range (size)]
+for i in range(size):
+    value=int(input("Enter the value :"))
+    key=value % size
+    bucket[key].append(value)
+    
+print(bucket)
+
+Output
+------
+Enter size of bucket: 5
+Enter the value :10
+Enter the value :2
+Enter the value :2
+Enter the value :12
+Enter the value :22
+[[10], [], [2, 2, 12, 22], [], []]
+
+
+Search Element
+--------------
+bucket=[[10], [], [2, 2, 12, 22], [], []]
+element=int(input("Enter a element for search: "))
+index=element % len(bucket)
+print(index)
+if element in bucket[index]:
+    print("Element available")
+else:
+    print("Element not available")
+
+Output
+------
+Enter a element for search: 12
+2
+Element available
+
+Delete Element
+--------------
+bucket=[[10], [], [2, 2, 12, 22], [], []]
+element=int(input("Enter a element for deletion: "))
+index=element % len(bucket)
+print(index)
+if element in bucket[index]:
+    bucket[index].remove(element)
+    print(bucket)
+else:
+    print("Element not available")
+
+Output
+------
+Enter a element for deletion: 12
+2
+[[10], [], [2, 2, 22], [], []]
+
+2. Open Addressing
+-------------------
+linear probing program
+----------------------
+size=int(input("Enter the size: "))
+bucket=[None]*size
+a=[10,28,23,54,32,44,87]
+for i in a :
+    index=i%size
+    start=index
+    while bucket[index] is not None:
+        index=(index+1) % size
+        if index == start:
+            print("Hash table is full")
+            break
+    else:
+        bucket[index]=i
+print(bucket)
+
+Output
+------
+Enter the size: 6
+Hash table is full
+[23, 54, 32, 44, 10, 28]
+
+linear probing search program
+-----------------------------
+hashtable=[10, 15, 12, 20, None]
+size = 5
+key = int(input("Enter element to delete : "))
+index = key % size
+start = index
+found = False
+while hashtable[index] is not None:
+    if hashtable[index] == key:
+        hashtable[index] = "DELETED"
+        found = True
+        print(f"{key} deleted")
+        break
+    index = (index + 1) % size
+    if index == start:
+        break
+if not found:
+    print("Element not found")
+print("After Deletion :", hashtable)
+
+Output
+------
+Enter element to delete : 20
+20 deleted
+After Deletion : [10, 15, 12, 'DELETED', None]
+
+Quadratic probing:
+------------------
+# W.A.P to insert values using Quadratic Probing
+
+size = int(input("Enter size of table : "))
+
+hashtable = [None] * size
+
+a = [10, 15, 12, 20]
+
+for value in a:
+
+    h = value % size
+    i = 0
+
+    while hashtable[(h + i**2) % size] is not None:
+        i += 1
+
+    index = (h + i**2) % size
+
+    hashtable[index] = value
+
+print(hashtable)
+
+# W.A.P to search element using Quadratic Probing
+------------------------------------------------
+hashtable = [10, 15, 12, None, 20]
+
+size = 5
+
+key = int(input("Enter element to search : "))
+
+h = key % size
+i = 0
+found = False
+
+while hashtable[(h + i**2) % size] is not None:
+
+    index = (h + i**2) % size
+
+    if hashtable[index] == key:
+        print(f"{key} found at index {index}")
+        found = True
+        break
+
+    i += 1
+
+    if i == size:
+        break
+
+if not found:
+    print("Element not found")
+
+# W.A.P to delete element using Quadratic Probing
+-------------------------------------------------
+hashtable = [10, 15, 12, None, 20]
+
+size = 5
+
+key = int(input("Enter element to delete : "))
+
+h = key % size
+i = 0
+found = False
+
+while hashtable[(h + i**2) % size] is not None:
+
+    index = (h + i**2) % size
+
+    if hashtable[index] == key:
+        hashtable[index] = "DELETED"
+        print(f"{key} deleted")
+        found = True
+        break
+
+    i += 1
+
+    if i == size:
+        break
+
+if not found:
+    print("Element not found")
+
+print(hashtable)
+
+ # W.A.P to perform Insert, Search, Delete operations
+---------------------------------------------------
+# using Quadratic Probing
+---------------------------
+def create_table(size):
+
+    # Create empty hash table
+    return [None] * size
+
+
+def hash_function(key, size):
+
+    return key % size
+
+
+# INSERT OPERATION
+def insert(table, key):
+
+    size = len(table)
+
+    h = hash_function(key, size)
+
+    i = 0
+
+    while table[(h + i**2) % size] is not None:
+        i += 1
+
+    index = (h + i**2) % size
+
+    table[index] = key
+
+    print(f"{key} inserted at index {index}")
+
+
+# SEARCH OPERATION
+def search(table, key):
+
+    size = len(table)
+
+    h = hash_function(key, size)
+
+    i = 0
+
+    while table[(h + i**2) % size] is not None:
+
+        index = (h + i**2) % size
+
+        if table[index] == key:
+            print(f"{key} found at index {index}")
+            return
+
+        i += 1
+
+        if i == size:
+            break
+
+    print("Element not found")
+
+
+# DELETE OPERATION
+def delete(table, key):
+
+    size = len(table)
+
+    h = hash_function(key, size)
+
+    i = 0
+
+    while table[(h + i**2) % size] is not None:
+
+        index = (h + i**2) % size
+
+        if table[index] == key:
+            table[index] = "DELETED"
+            print(f"{key} deleted")
+            return
+
+        i += 1
+
+        if i == size:
+            break
+
+    print("Element not found")
+
+
+# DISPLAY OPERATION
+def display(table):
+
+    print(table)
+
+
+# MAIN PROGRAM
+size = 5
+
+my_table = create_table(size)
+
+insert(my_table, 10)
+insert(my_table, 17)
+insert(my_table, 24)
+insert(my_table, 31)
+
+display(my_table)
+
+search(my_table, 24)
+
+delete(my_table, 17)
+
+display(my_table)
+
+Double Hashing in Python
+--------------------------
+# W.A.P to insert elements using Double Hashing
+----------------------------------------------
+# Create Hash Table
+def create_table(size):
+
+    return [None] * size
+
+
+# Primary Hash Function
+def hash1(key, size):
+
+    return key % size
+
+
+# Secondary Hash Function
+def hash2(key, prime):
+
+    return prime - (key % prime)
+
+
+# Insert Operation
+def insert(table, key, prime):
+
+    size = len(table)
+
+    h1 = hash1(key, size)
+
+    h2 = hash2(key, prime)
+
+    i = 0
+
+    while table[(h1 + i * h2) % size] is not None:
+
+        i += 1
+
+    index = (h1 + i * h2) % size
+
+    table[index] = key
+
+    print(f"{key} inserted at index {index}")
+
+
+# Display Hash Table
+def display(table):
+
+    print("\nHash Table")
+
+    for index, value in enumerate(table):
+
+        print(f"{index} -> {value}")
+
+
+# Main Program
+table = create_table(7)
+
+prime = 5
+
+insert(table, 10, prime)
+insert(table, 17, prime)
+insert(table, 24, prime)
+insert(table, 31, prime)
+
+display(table)
