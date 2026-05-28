@@ -1,0 +1,370 @@
+Group of elements with duplicates
+  List ➜ Allow Modification ➜ [5, 9, 3]
+  Tuple ➜ No Modification ➜ (5, 9, 3, 6)
+
+Group of elements with no duplicates
+  Set ➜ Allow Modification ➜ {5, 9, 3, 6}
+
+Group of elements with key-value pair
+  Dictionary ➜ Allow Modifications
+{101:'Vishnu', 102:'Varun', 103:'Kiran'}
+
+1. List
+----------
+  -Group Of Values Including Duplicates and we want modifications.
+Example:
+  a1 = [5, 9, 3, 5, 25]
+Use:
+  Store Student Marks
+
+2. Tuple
+-----------
+  -Group of Values including Duplicates and We don't want modifications.
+Example:
+  t1 = ('CSE', 'ECE', 'IT')
+  t1 = (5,7,9,5,2)
+Use:
+  Store Department names
+
+3. Set
+------
+  -Group of Values without Duplicates then use Set, Modifications Allowed
+Example:
+  s1 = {5, 9, 25, 72, 8}
+Use:
+  Store Student Hallticket Numbers
+
+4. Dictionary
+-------------
+  -Used to Store Group of Values in the form of Key-Value Pairs
+Example:
+  d1 = {
+      101: 'Vishnu',
+      102: 'Avinash',
+      103: 'Sarma'
+  }
+Use:
+  Store TrainNumber, TrainName
+
+List
+----
+  - List are declared by using []
+  - We can store group of values including duplicates
+  - We can perform modifications also
+Example:
+  a1 = [5, 9, 12, 7, 20]
+
+To access elements it provides 2 types of index
+  1. Forward index
+    - it starts with 0
+  2. BackWard / Reverse index
+    - it starts with -1 from last element onwards
+Eg.
+ 0   1   2   3   4
+[10, 20, 30, 40, 50]
+ -5  -4  -3  -2  -1
+
+Displaying List Data
+--------------------
+There are four primary ways to display list data:
+1)Print all elements at once:
+  print(a)
+2)Print elements one by one using a for loop:
+  for i in a:
+    print(i)
+3)Print specific elements using index numbers:
+    print(a[3])
+4)Display part of data using Slicing.
+    Syntax: [start : End : step]
+    Examples:
+    a1[2:5] - returns elements at index 2, 3, and 4.
+    a1[::-1] - returns all elements in reverse order.
+
+Modifying List Elements
+-----------------------
+- To modify an element, use the index number:
+- Syntax: listname[indexno] = value
+Example:
+a1 = [5, 9, 12, 7, 20]
+a1[1] = 25  # Changes 9 to 25
+
+Example approch one using for else:
+-----------------------------------
+l=[10,20,30,40,50,60]
+n=int(input("Enter the number: "))
+for i in range(len(l)):
+    if l[i]==n:
+        m=int(input("Enter the number for changing: "))
+        l[i]=m
+        break
+else:
+    print("Not found!")
+    
+print(*l)
+output
+------
+Enter the number: 20
+Enter the number for changing: 2
+10 2 30 40 50 60
+
+Using if else
+-------------
+l=[10,20,30,40,50,60]
+n=int(input("Enter the number: "))
+if n in l:
+    for i in range(len(l)):
+        if l[i]==n:
+            m=int(input("Enter the number for changing: "))
+            l[i]=m
+            break
+else:
+    print("Not found!")
+print(*l)
+
+Output
+------
+Enter the number: 11
+Not found!
+10 20 30 40 50 60
+
+using string data
+-----------------
+order=['idly','Puri','Vada']
+oldname=input("Enter item name to modify: ")
+if oldname in order:
+    for i in range(len(order)):
+        if order[i]==oldname:
+            neworder=input("Enter new item for modifying your oder: ")
+            order[i]=neworder
+else:
+    print("Item not found!")
+print(*order)
+
+Output
+------
+Enter item name to modify: Puri
+Enter new item for modifying your oder: Uthopum
+idly Uthopum Vada
+
+#creating a list
+name=["Akash","Alok","Abhijeet","Pranaya","Apu"]
+title=["Ghadai","Purohit","Panda","Bisoyee","Nayak"]
+
+#LIST OPERATIONS 
+# 1) CONCATENATION
+print(name+title)
+#2 )REPETITION
+print(name*3)
+#3 )[]SCICE
+print(name[2])
+#4 )[:]RANGE
+print(name[:4])
+#5 )IN MEMBERSHIP
+print("Akash" in name)
+#6 )NOT IN MEMBER
+print("Akash" not in name)
+
+
+#BUILT IN FUNCTIONS COMMON TO LISTS 
+lst = [1, 2, 3, 4, 5]
+
+# len() – Number of elements
+print(len(lst))                # 5
+
+# list() – Convert to list
+print(list("abc"))             # ['a', 'b', 'c']
+
+# type() – Type of variable
+print(type(lst))               # <class 'list'>
+
+# max() – Maximum value
+print(max(lst))                # 5
+
+# min() – Minimum value
+print(min(lst))                # 1
+
+# sum() – Sum of elements
+print(sum(lst))                # 15
+
+# sorted() – Returns sorted list
+print(sorted(lst))             # [1, 2, 3, 4, 5]
+
+# any() – True if any element is True
+print(any(lst))                # True
+
+# all() – True if all elements are True
+print(all(lst))                # True
+
+# enumerate() – Index with value
+print(list(enumerate(lst)))    # [(0,1), (1,2), (2,3), (3,4), (4,5)]
+
+#List Methods
+lst = [1, 2, 3, 4]
+
+# append() – Add element at end
+lst.append(5)
+print(lst)                     # [1, 2, 3, 4, 5]
+
+# extend() – Add multiple elements
+lst.extend([6, 7])
+print(lst)                     # [1, 2, 3, 4, 5, 6, 7]
+
+# insert() – Insert at position
+lst.insert(2, 99)
+print(lst)                     # [1, 2, 99, 3, 4, 5, 6, 7]
+
+# remove() – Remove first occurrence
+lst.remove(99)
+print(lst)                     # [1, 2, 3, 4, 5, 6, 7]
+
+# pop() – Remove by index (last by default)
+lst.pop()
+print(lst)                     # [1, 2, 3, 4, 5, 6]
+
+# index() – Get index of element
+print(lst.index(4))            # 3
+
+# count() – Count occurrences
+lst.append(2)
+print(lst.count(2))            # 2
+
+# sort() – Sort list
+lst.sort()
+print(lst)                     # [1, 2, 2, 3, 4, 5, 6]
+
+# reverse() – Reverse list
+lst.reverse()
+print(lst)                     # [6, 5, 4, 3, 2, 2, 1]
+
+# copy() – Copy list
+new_lst = lst.copy()
+print(new_lst)                 # [6, 5, 4, 3, 2, 2, 1]
+
+# clear() – Remove all elements
+lst.clear()
+print(lst) 
+
+
+#sort discending
+thislist = ["orange", "mango", "kiwi", "pineapple", "banana"]
+thislist.sort(reverse = True)
+print(thislist)
+
+#CONVERTING ONE SEQUENCE TYPE TO ANOTHER
+#1)LIST TO TUPPLE
+tuple(name)
+print(name)
+#2)TUPPLE TO LIST
+list(name)
+print(name) 
+
+#LIST TO STRING
+#LIST JOIN METHOD
+def listtostring(s):
+    str=" "
+    return(str.join(s))
+s=["A","K","A","S","H"]
+print(listtostring(s))
+
+
+#Loop Through the Index Numbers
+#Print all items by referring to their index number:
+thislist = ["apple", "banana", "cherry"]
+for i in range(len(thislist)):
+  print(thislist[i])
+#Using a While Loop
+thislist = ["apple", "banana", "cherry"]
+i = 0
+while i < len(thislist):
+  print(thislist[i])
+  i = i + 1
+
+#Looping Using List Comprehension
+#A short hand for loop that will print all items in a list:
+thislist = ["apple", "banana", "cherry"]
+[print(x) for x in thislist]
+
+
+Quetions
+--------
+Consider a=[8, 12, 7, 5, 9], now read a number then check number available or not if available then print index number
+Method 1:
+
+Python
+a = [8, 12, 7, 5, 9]
+n = int(input('Enter any Number : '))
+for i in range(len(a)):
+    if a[i] == n:
+        print(f'Index number is {i}')
+        break
+else:
+    print("sorry..! Your number not available")
+
+
+Array Operations:
+------------------
+-We can perform Operations like insert, delete, modify, searching etc..
+W.a.p to read elements from user until they said stop, now find sum of all elements
+
+Insert element 
+cart = []
+ch = 'y'
+while ch == 'y':
+    n = int(input('Enter any Number : '))
+    cart.append(n)
+    ch = input('Do you want to continue(y/n) : ')
+print(f'Your Elements are {cart}')
+print(f'Sum of all elements {sum(cart)}')
+
+Delete element
+Q)Consider a = [12, 9, 7, 10, 8], now read an element then delete it
+
+cart = [12, 9, 7, 10, 8]
+n = int(input('Enter any Number : '))
+if n in cart:
+    cart.remove(n)
+else:
+    print(f'{n} is not Available in your list')
+print(f'Your List is {cart}')
+
+Find index number
+Q)Consider a = [12, 9, 7, 10, 8], now read an element then check element is 
+ available or not if available then print index number.
+
+cart = [12, 9, 7, 10, 8]
+n = int(input('Enter any Number : '))
+if n in cart:
+    i = cart.index(n)
+    print(f'{n} available in index number {i}')
+else:
+    print(f'{n} is not Available in your list')
+
+Changing data
+Q)Consider a = [12, 9, 7, 10, 8], read an element then replace with new element.
+cart = [12, 9, 7, 10, 8]
+n = int(input('Enter any Number : '))
+if n in cart:
+    i = cart.index(n)
+    m = int(input('Enter new Element to modify : '))
+    cart[i] = m
+else:
+    print(f'{n} is not Available in your list')
+print(f'Your Elements are : {cart}')
+
+Nested List
+-------------
+--> A List inside of another list is called as nested list
+
+--> If you have table type of data then we can use nested list
+
+Ex: a = [ [101, 'vishnu', 25000.0], [102, 'Varun', 32000.0] ]
+
+      0       1         2
+0   101  'vishnu'   25000.0
+1   102  'Varun'    32000.0
+
+print(a[0])  #[101, 'vishnu', 25000.0]
+print(a[0][1]) #vishnu
+print(a[1][1]) #Varun
+
+    
