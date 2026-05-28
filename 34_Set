@@ -1,0 +1,18 @@
+Set
+---
+-  Sets are declared by using { }
+-  Unordered collection of unique elements
+-  In sets we don't have any index number
+
+-Sets are unordered collection of elements
+  s1 = {92, 5, 54, 22, 6, 4, 56, 1}
+  
+  print(s1)
+  # {1, 4, 5, 6, 54, 22, 56, 92}
+
+- Sets are always unique data, it never stores duplicates
+  s1 = {92, 5, 54, 22, 6, 4, 56, 1, 22, 6}
+  
+  print(s1)
+  # {1, 4, 5, 6, 54, 22, 56, 92}
+
