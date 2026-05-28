@@ -1,0 +1,78 @@
+Tuple
+----
+  - It is used to store group of elements including duplicates
+  - Tuples never allowed modifications
+  - Tuples are immutable object
+  - Tuples are declared by using ()
+Example
+  t1 = (5,7,9)
+- We have both forward and backward index to access elements in tuple
+- Forward index always starts from 0
+- Backward index always starts from -1 from last element onwards
+- Once you declare tuple then we can not add or delete or modify elements
+
+How to Declare a tuple with single element
+------------------------------------------
+  t1 = (7)
+  print(type(t1))      # int
+  
+  t2 = (6,)
+  print(type(t2))      # tuple
+
+How to modifie the tuple data
+-----------------------------
+  t1 = ('CSE', 'IT', 'ECE')
+  
+  Now add 'EEE' course to your tuple.
+  
+  Directly we can't add any element to Tuple
+  Because tuples are immutable objects so we can't do modifications
+  If you want to add element then convert tuple to list then add element
+  t1 = ('CSE','IT','ECE')
+  
+  print("Your Courses are : ", t1)
+  
+  t1 = list(t1)
+  t1.append('EEE')
+  t1 = tuple(t1)
+  print("Your Courses are : ", t1)
+
+Methods
+--------
+ -We have only 2 methods available in tuples, they are:
+
+  1. count()
+  It is used to count no. of occurrences of a given element
+  2. index()
+  It is used to find index number of a given element
+  Example
+  t1 = (5, 9, 7, 4, 5)
+  
+  print('9 occured', t1.count(9), 'times') #9 occured 1 times
+  print('9 Available in index number', t1.index(9)) #9 Available in index number 1
+  print('8 occured', t1.count(8), 'times') #8 occured 0 times
+
+Difference Between List and Tuple
+-----------------------------------
+List
+----
+-List declared by using []
+-List is a Mutable Object
+-That means we can do modifications
+-Methods in List
+  append()
+  insert()
+  remove()
+  pop(index)
+
+Tuple
+-----
+-Tuples are declared by using ()
+-Tuple are Immutable objects
+-That means we can not modify tuple elements
+-Methods in Tuple
+  count()
+  index()
+
+
+
