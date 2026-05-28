@@ -16,3 +16,117 @@ Set
   print(s1)
   # {1, 4, 5, 6, 54, 22, 56, 92}
 
+Methods
+--------
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+1. add()
+--------
+-  It is used to add specified element to your set
+A.add(10)
+print(A)                       # {1, 2, 3, 4, 10}
+
+2. remove()
+------------
+- It is used to remove specified element from the set if available, 
+  otherwise it will get KeyError.
+A.remove(10)
+print(A)                       # {1, 2, 3, 4}
+
+3. pop()
+--------
+-  It will remove top most element in your set
+s1.pop()
+
+4. discard()
+-------------
+- It will remove a specified element from the set if available, 
+  otherwise it will do nothing
+s1.discard(52)
+
+5. clear()
+-----------
+- It will remove all the elements in your set
+s1.clear()
+
+6. update()
+------------
+Add multiple elements
+s = {1,2}
+s.update([5, 9, 2])
+
+A = {1, 2, 3, 4}
+B = {3, 4, 5, 6}
+
+7. Union
+---------
+print(A | B)                   # {1, 2, 3, 4, 5, 6}
+print(A.union(B))
+
+8. Intersection
+----------------
+print(A & B)                   # {3, 4}
+print(A.intersection(B))
+
+9. Difference
+--------------
+print(A - B)                   # {1, 2}
+print(A.difference(B))
+
+10. Symmetric Difference
+------------------------
+print(A ^ B)                   # {1, 2, 5, 6}
+print(A.symmetric_difference(B))
+
+11. issubset()
+--------------
+Checks whether one set belongs to another
+a = {1, 2}
+b = {1, 2, 3, 4}
+print(a.issubset(b))
+
+12. isdisjoint()
+----------------
+Checks no common elements
+a = {1, 2}
+b = {3, 4}
+print(a.isdisjoint(b))
+
+13. copy() 
+----------
+– Copy set
+D = B.copy()
+
+ SET BUILT-IN FUNCTIONS
+ -------------------------------
+
+ len() – Number of elements
+print(len(A))                  # 4
+
+ type() – Data type
+print(type(A))                 # <class 'set'>
+
+ max() – Maximum element
+print(max(A))                  # 4
+
+ min() – Minimum element
+print(min(A))                  # 1
+
+ sum() – Sum of elements
+print(sum(A))                  # 10
+
+ sorted() – Sorted list
+print(sorted(A))               # [1, 2, 3, 4]
+
+ set() – Create empty set
+C = set()
+
+MORE
+---
+# Membership
+print(3 in A)                  # True
+
+# Iteration
+for i in A:
+    print(i)
