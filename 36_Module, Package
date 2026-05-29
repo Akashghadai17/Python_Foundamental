@@ -1,0 +1,23 @@
+What is Module?
+-In Python Programming, a module is a file that contains 
+ Python code (functions, variables, classes, etc.)
+-Any file which ends with .py extension is called as module.
+
+What is Package?
+- Collection of related modules is called as package.
+
+__init__ (Define its a package)
+-------------------------------
+-Every Package should contains _ _init_ _.py file then only your python treat
+ that it is package up to Python <3.3, But later versions It’s Optional.
+
+import keyword
+---------------
+-If you want to use one module to another module the use 'import' keyword.
+-Syntax: import modulename
+-Because of import keyword all the members of your module is loaded in your 
+ program .
+-Now if you want to access data then ->Modulename.variablename
+                                     ->Modulename.functionname()
+-If you want to import a module from another location then we need to use complete path.
+-We can set alias name to your path so we can access your variable and functions by using alias names.
