@@ -1,0 +1,131 @@
+What is Module?
+-In Python Programming, a module is a file that contains 
+ Python code (functions, variables, classes, etc.)
+-Any file which ends with .py extension is called as module.
+
+What is Package?
+- Collection of related modules is called as package.
+
+__init__ (Define its a package)
+-------------------------------
+-Every Package should contains _ _init_ _.py file then only your python treat
+ that it is package up to Python <3.3, But later versions It’s Optional.
+
+import keyword
+---------------
+-If you want to use one module to another module the use 'import' keyword.
+-Syntax: import modulename
+-Because of import keyword all the members of your module is loaded in your 
+ program .
+-Now if you want to access data then ->Modulename.variablename
+                                     ->Modulename.functionname()
+-If you want to import a module from another location then we need to use complete path.
+-We can set alias name to your path so we can access your variable and functions by using alias names.
+  -eg- import Amazon.Product.items  -This is called absulute path
+       import Amazon.Product.items as ai -Alias name
+
+-----------------
+|     Amazon    |
+|----------------
+|-- __init__.py
+|
+|   ------------
+|---| Booking  | 
+|   ------------
+|        |-- __init__.py
+|        |-search.py
+|        |-order.py
+|
+|   ------------        
+|---| Product  |       
+|   ------------
+|        |-- __init__.py
+|        |- items.py
+|        |- stocksorder.py
+
+
+items.py
+--------
+def iteminfo():
+    print("Items")
+gst=6.8
+ball=10
+bat=100
+
+stocksorder.py
+--------------
+import items
+print(items.gst)
+print(items.ball)
+print(items.iteminfo("name"))
+
+Or
+
+#REal time use this module
+from items import ball , bat, itemInfo
+print(ball)
+itemInfo('ball')
+
+
+search.py
+----------
+import Products.items                    -Related path
+print(Products.items.gst)
+print(Products.items.iteminfo('Ball'))
+
+or Absulute path
+
+import Amazon.Products.items
+print(Amazon.Products.items.gst)
+print(Amazon.Products.items.itemInfo('ball'))
+
+Or Alias name
+
+import Amazon.Products.items as ai
+print(ai.gst)
+print(ai.itemInfo('ball'))
+
+Or
+
+from Amazon.Products.items import *
+print(gst)
+
+
+Output
+-------
+6.8
+Items Available
+
+-If you use 'import' keyword the all the members of your module is loaded in your 
+ program.
+-If you want specific members from module the use 'from....import...'
+
+Note
+----
+- import only used in if you are in a home just call home mates.
+ But if you import then all members are call for spesific call use 'from import '
+
+-use import or from in every where it can be in same package or diffrent package.
+
+- from Amazon.Products.items import * - * means all loaded
+
+
+-Technicaly is called User Define modules.
+
+-Buesed on my application requirement i created package and module use one 
+ module data into another module, tchnically it called User define modules.
+
+-If python provide the package then simple use import
+-If 3rd party use pip install command
+
+Third-Party Packages Installed by using pip
+Ex:
+pip install pandas
+pip install pyspark
+
+Package       Purpose
+pandas        Data analysis
+numpy         Numerical operations
+pyspark       Big data
+requests      API handling
+
