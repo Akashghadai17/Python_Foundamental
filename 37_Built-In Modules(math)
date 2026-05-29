@@ -1,0 +1,114 @@
+Note
+----
+n = eval(input("Enter the value: "))
+print(n)
+1.output
+------
+20.2
+20.2
+
+2.output
+--------
+20
+20
+
+-If you don't know th value type then use eval.
+
+Built-in Modules:
+-------------------
+If Python provides, then it is called as Built-in modules
+1. Math : It is used to perform mathematical calculations
+    1.sqrt( ) : Used to get square root value
+    2.ceil() : Used to get round up then value
+    3.floor(): Used to get round down the value
+    4.factorial(): Used to get factorial of a given number
+1. Math 
+-------
+1.sqrt( )
+---------
+import math
+n=eval(input("Enter the value"))
+s=math.sqrt(n)
+print(f"Square root value : {s}")
+
+Output
+------
+Enter the value 2
+Square root value : 1.4142135623730951
+
+2.ceil()
+--------
+import math
+n=eval(input("Enter the value: "))
+c=math.ceil(n)
+print(f"Ceil value : {c}")
+
+Output
+------
+Enter the value:2.5
+Ceil value : 3
+
+3.floor():
+----------
+import math
+n=eval(input("Enter the value: "))
+f=math.floor(n)
+print(f"floor value : {f}")
+
+Output
+------
+Enter the value:2.6
+floor value : 2
+
+4.factorial()
+-------------
+import math
+n=eval(input("Enter the value: "))
+f=math.factorial(n)
+print(f"factorial of {n} is : {f}")
+
+Output
+------
+Enter the value:5
+factorial of 5 is : 120
+
+All math modules
+-----------------
+sqrt()       # Square root
+pow()        # Power
+ceil()       # Round up
+floor()      # Round down
+factorial()  # Factorial
+gcd()        # Greatest Common Divisor
+lcm()        # Least Common Multiple
+fabs()       # Absolute value
+fmod()       # Remainder
+modf()       # Fractional and integer parts
+
+sin()        # Sine
+cos()        # Cosine
+tan()        # Tangent
+asin()       # Arc sine
+acos()       # Arc cosine
+atan()       # Arc tangent
+
+log()        # Natural logarithm
+log10()      # Base-10 logarithm
+log2()       # Base-2 logarithm
+exp()        # e^x
+
+degrees()    # Radians to degrees
+radians()    # Degrees to radians
+
+isqrt()      # Integer square root
+trunc()      # Truncate decimal part
+prod()       # Product of iterable
+dist()       # Distance between points
+hypot()      # Hypotenuse length
+
+pi           # 3.141592653589793
+e            # 2.718281828459045
+tau          # 6.283185307179586
+inf          # Infinity
+nan          # Not a Number
+
