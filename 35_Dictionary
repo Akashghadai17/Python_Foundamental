@@ -1,0 +1,182 @@
+Dictionary
+-----------
+-  Dictionary are declared by using { }
+- It will store elements in key-value pairs.
+  - Keys never duplicate.
+  - Value may be duplicate.
+Example
+--------
+  TrainNo    TrainName
+  -------    ----------
+  07291      Krishna
+  07265      Intercity
+  07290      Krishna
+  Key        Value
+No Duplicate Key
+
+Syntax:  dictname = {key:value, key:value, ......... }
+Ex:     d1 = { 101 : 'Vishnu', 102 : 'Vamsi', 103 : 'Varun' }
+        print( d1 )
+
+Adding Element to Dictionary / Modify Element to Dictionary
+-----------------------------------------------------------
+Dictionaryname[key] = Value
+
+Note: If key not Available then Element is Added
+If key Availble then Value is Updated
+Example
+-------
+d1 = { 101 : 'Vishnu', 102 : 'Vamsi', 103 : 'Varun' }
+d1[104] = 'Sarma'        | d1[102] = 'Sarma'
+print(d1)                       | print(d1)
+
+Value Inserted.               Value Updated, Because key already available
+
+Methods in Dict
+---------------
+d = {"a": 1, "b": 2, "c": 3}
+1. keys()
+---------
+- Returns all keys.
+ print(d.keys())
+ O/p-
+ dict_keys(['a', 'b', 'c'])
+ 
+2. values()
+-----------
+- Returns all values.
+  print(d.values())
+  O/p-
+  dict_values([1, 2, 3])
+  
+3. items()
+----------
+- Returns key-value pairs.
+  print(d.items())
+  O/p-
+  dict_items([('a',1), ('b',2), ('c',3)])
+
+4. pop()
+---------
+- Removes specified key.
+  d.pop("b")
+  print(d)
+  O/P
+  {'a':1, 'c':3}
+
+5. get("a")
+-----------
+- Gets value of key "a".
+  print(d.get("a"))
+  O/P-
+   1
+
+6. get("x", 0)
+--------------
+- Returns default value if key not found.
+  print(d.get("x", 0))
+  O/P-
+  0
+
+7. update()
+-----------
+- Adds or updates elements.
+  d.update({"d": 4})
+  print(d)
+  O/P
+  {'a':1, 'b':2, 'c':3, 'd':4}
+
+8. popitem()
+------------
+- Removes last inserted item.
+  d.popitem()
+  print(d)
+  
+9. setdefault()
+----------------
+- Adds key if not present.
+  d.setdefault("e", 5)
+  print(d)
+  O/P-
+ {'a':1, 'b':2, 'c':3, 'e':5}
+
+10. copy()
+----------
+- Creates copy of dictionary.
+  x = d.copy()
+  print(x)
+  
+11. clear()
+-----------
+- Removes all items.
+  d.clear()
+  print(d)
+  O/P-
+  {}
+  
+12. dict.fromkeys()
+-------------------
+- Creates dictionary with same default value.
+  x = dict.fromkeys(["x", "y", "z"], 0)
+  print(x)
+
+Q)d1 = { 101 : 'Vishnu', 102 : 'Vamsi', 103 : 'Varun' }
+  Read the name and display empid
+  input:Vishnu
+  Output:102
+
+  Approach-1
+  -----------
+  d1 = { 101 : 'Vishnu', 102 : 'Vamsi', 103 : 'Varun' }
+Name=input("Enter a name: ")
+for i,j in d1.items():
+    if j==Name:
+        print(i)
+        break
+
+Output
+------
+Enter a name: Varun
+103
+
+Approach-2
+----------
+d1 = { 101 : 'Vishnu', 102 : 'Vamsi', 103 : 'Varun' }
+Name=input("Enter a name: ")
+key=[]
+
+for i,j in d1.items():
+    if j==Name:
+        key.append(i)
+        break
+if len(key)>0:
+    print(*key)
+
+Output
+------
+Enter a name: Varun
+103
+
+
+Single key with multiple values
+---------------------------------
+d1 = {11221 : ['Mouse', 800.0], 11226: ['Drive', 3500.0]}
+
+Read product name then display cost of Product
+Code
+----
+items={1121:['mouse',800.0],1126:['Drive',3500.0]}
+Name=input("Enter Item name: ")
+
+for i in items.values():
+    if i[0]==Name:
+        print(i[1])
+        break
+else:
+    print("Drive not found!")
+
+Output
+------
+Enter Item name: mouse
+800.0
+
