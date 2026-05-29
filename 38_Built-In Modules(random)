@@ -1,0 +1,63 @@
+random : Used to generating random values, simulations, and testing
+-------
+1. randint(start, stop): It will generate random number from start to stop.
+-----------
+import random
+st=int(input("Enter starting number: "))
+ed=int(input("Enter ending number: "))
+
+print(random.randint(st,ed))
+
+Output
+-----
+Enter starting number:1
+Enter ending number:10
+2
+
+2. choice(List) : It will return only one value from your list
+-----------------
+import random
+l1=[10,20,30,40,50]
+print(random.choice(l1))
+
+Output
+------
+20
+
+3. Shuffle(list) : It will shuffle list then return it
+----------------
+import random
+l1=[8,12,9,15,6]
+print(random.shuffle(l1))
+Output
+-------
+None
+
+All random
+-----------
+random()        # Random float (0.0 to 1.0)
+randint()       # Random integer
+randrange()     # Random number from range
+uniform()       # Random float in range
+
+choice()        # Random single item
+choices()       # Random items with replacement
+sample()        # Random unique items
+shuffle()       # Shuffle list
+
+seed()          # Set seed value
+getstate()      # Get current state
+setstate()      # Restore state
+
+getrandbits()   # Random bits
+
+triangular()    # Triangular distribution
+betavariate()   # Beta distribution
+expovariate()   # Exponential distribution
+gammavariate()  # Gamma distribution
+gauss()         # Gaussian distribution
+lognormvariate()# Log-normal distribution
+normalvariate() # Normal distribution
+vonmisesvariate() # Von Mises distribution
+paretovariate() # Pareto distribution
+weibullvariate() # Weibull distribution
