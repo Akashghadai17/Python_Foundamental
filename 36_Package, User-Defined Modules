@@ -3,6 +3,15 @@ What is Module?
  Python code (functions, variables, classes, etc.)
 -Any file which ends with .py extension is called as module.
 
+Types of Modules
+----------------
+- We have two types of modules, They are
+1. User-Defined Modules
+2. Built-In Modules
+
+1. User-Defined Modules
+-----------------------
+
 What is Package?
 - Collection of related modules is called as package.
 
