@@ -1,0 +1,131 @@
+4. datetime: Used for timestamps, logs, scheduling, ETL Processing, date
+calculations
+
+1. datetime.now( ) : It return Current Date and time
+2. date.today( ) : It return current Date
+3. strftime( ) : Used to format date
+4. strptime( ) : Used to convert string to date
+
+from datetime import datetime,date
+print(datetime.now())
+print(date.today())
+today=datetime.now()
+print(today.strftime("13-06-2000"))
+d = datetime.strptime("14-05-2026", "%d-%m-%Y")
+print(d)
+
+Output
+------
+2026-05-30 08:42:44.228128
+2026-05-30
+13-06-2000
+2026-05-14 00:00:00
+
+Q)W.a.p to find how many days between two dates
+
+from datetime import datetime
+doj=datetime(26,4,26)
+lastworkingday = datetime(26,5,31)
+difference = lastworkingday - doj
+print(difference.days)
+
+Output
+------
+35
+
+Q)W.a.p to add 15 days to existing date
+
+from datetime import datetime, timedelta
+issue_date = datetime.now()
+return_date = issue_date + timedelta(days=15)
+print("Issue Date :", issue_date)
+print("Return Date :", return_date)
+
+Output
+-------
+Issue Date : 2026-05-30 09:05:35.835855
+Return Date : 2026-06-14 09:05:35.835855
+
+5. os: Used to handle files, folder operations and path handling
+------
+1. getcwd( ) : Used to get current working directory
+2. mkdir( ) : Used to create new directory
+3. listdir( ) : Used to display all files
+4. remove( ): Used to remove files
+
+1. getcwd( ) 
+-------------
+import os
+print(os.getcwd())
+
+Output
+------
+/Workspace/Users/akashghadai017@gmail.com/Drafts
+
+2. mkdir( )
+-----------
+import os
+os.mkdir('test')
+
+3. listdir( )
+-------------
+import os
+print(os.listdir())
+Output
+--------
+['Datetime Module.ipynb', 'Os Module.ipynb', 
+'Random Module.ipynb', 'Calendar Module.ipynb', 
+'mFirstPy.ipynb', 'Drafts', 'Math Module.ipynb']
+
+4. remove( ): Used to remove files
+-------------
+import os
+os.remove('xyz.py.ipynb')
+
+All OS
+------
+chdir()         # Change directory
+getcwd()        # Get current directory
+listdir()       # List files and folders
+mkdir()         # Create directory
+makedirs()      # Create nested directories
+rmdir()         # Remove empty directory
+removedirs()    # Remove nested directories
+
+remove()        # Delete file
+rename()        # Rename file/folder
+replace()       # Replace file
+
+stat()          # File information
+chmod()         # Change permissions
+access()        # Check permissions
+
+system()        # Execute OS command
+startfile()     # Open file (Windows)
+
+walk()          # Traverse directories
+scandir()       # Directory iterator
+
+getlogin()      # Current user
+getpid()        # Process ID
+getppid()       # Parent Process ID
+
+environ         # Environment variables
+getenv()        # Get environment variable
+putenv()        # Set environment variable
+
+path.exists()   # Check path exists
+path.isfile()   # Check file
+path.isdir()    # Check directory
+path.join()     # Join paths
+path.basename() # File name
+path.dirname()  # Directory name
+path.abspath()  # Absolute path
+path.getsize()  # File size
+
+cpu_count()     # Number of CPUs
+urandom()       # Random bytes
+
+
+
+
