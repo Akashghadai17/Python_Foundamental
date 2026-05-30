@@ -1,0 +1,23 @@
+6. sys: Used to get system cofigurations
+1. version( ) : Used to return version
+2. path( ) : It will provide all the paths where your python search for module
+3. exit( ) : Used to stop program
+
+import sys
+print(sys.version)
+
+3.12.3 (main, Mar 23 2026, 19:04:32) [GCC 13.3.0]
+
+import sys
+print(sys.path)
+['/databricks/python_shell/scripts', '/databricks/spark/python/lib/py4j-0.10.9.9-src.zip', 
+'/databricks/python_shell/lib', '/usr/lib/python312.zip', '/usr/lib/python3.12', 
+'/usr/lib/python3.12/lib-dynload', '/local_disk0/.ephemeral_nfs/envs/pythonEnv-f7e4d371-e300-4e7
+6-909e-11fc7c8e6716/lib/python3.12/site-packages', '/local_disk0/.ephemeral_nfs/cluster_librari
+es/python/lib/python3.12/site-packages', '/databricks/python/lib/python3.12/site-packages', '/u
+sr/local/lib/python3.12/dist-packages', '/usr/lib/python3/dist-packages', '/usr/local/lib/python
+3.12/dist-packages/setuptools/_vendor', '', '/Workspace/Users/akashghadai017@gmail.com/Drafts']
+
+import sys
+print(sys.exit)
+<built-in function exit>
