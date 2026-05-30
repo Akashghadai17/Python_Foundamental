@@ -1,0 +1,42 @@
+Important variable in Module : _ _name_ _
+--------------------------------------------
+__name__ is a special Python variable that tells whether a file is executed
+directly or imported as a module.
+
+items.py
+---------
+def itemInfo(name):
+    print("Items")
+gst=6.8
+ball=10
+bat=100
+print(__name__)
+
+Output
+------
+__main__    #Use your code not import
+
+stocks.py
+---------
+from items import ball , bat, itemInfo
+print(ball)
+itemInfo('ball')
+
+Output
+-----
+items ----Use items module
+10
+Items
+
+
+
+
+How Python finds modules.
+-------------------------
+import sys
+print(sys.path)
+
+It checks:
+Current folder
+Python installation folders
+Environment variables
