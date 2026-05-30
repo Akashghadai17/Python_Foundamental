@@ -10,7 +10,7 @@ print(os.getcwd())
 
 import os
 os.mkdir('test')
-os.mkdir('D:\AVD\Python\test') #You can allso add the path
+os.mkdir(r'D:\AVD\Python\test') #You can allso add the path
 
 
 import os
