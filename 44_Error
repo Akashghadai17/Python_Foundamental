@@ -1,0 +1,159 @@
+Error
+------
+- The mistakes in our program is called as Error.
+- Error are 3 types:
+  1.Syntax Error
+  2.Logical Error
+  3.Runtime Error
+
+1.Syntax Error
+--------------
+a=10
+if a==10       ->Syntax error(:)
+    print(a)
+
+2)Logical Error
+---------------
+Wrong Condition:
+age = 20
+if age > 21:
+    print("Eligible")
+
+Output: Nothing
+
+Correct:
+--------
+if age >= 18:
+    print("Eligible")
+
+3)Runtime Error:
+----------------
+- Runtime Error: An error that occurs while the program is running.
+
+Example 1: Division by Zero
+----------------------------
+a = 10
+b = 0
+print(a / b)
+
+Output:
+ZeroDivisionError: division by zero
+
+Example 2: Index Out of Range
+---------------------------------
+lst = [1, 2, 3]
+print(lst[5])
+
+Output:
+IndexError: list index out of range
+
+Example 3: File Not Found
+--------------------------
+f = open("data.txt")
+Output:
+FileNotFoundError
+
+Example 4: Invalid Type
+-----------------------
+print("10" + 5)
+
+Output:
+TypeError
+
+Imagine:
+----------
+CSV file missing
+Database connection failed
+API not responding
+Invalid data in pipeline
+JSON corrupted
+
+Without exception handling:
+--------------------------
+- Entire ETL job fails
+
+With exception handling:
+- Error logged
+- Pipeline continues
+- Alert generated
+
+Different types of Errors:
+---------------------------
+1. FileNotFoundError : Occurs when file does not exist.
+-----------------------
+  f = open('test2.txt')
+  print('Thank you')
+- You are trying to open ‘test2.txt’ file which is not available.
+
+2. ValueError: Occurs when invalid value given.
+---------------
+  n = int(input('Enter any no'))
+  input : 2.5
+- Your Program is expecting integer value but you enter floating value
+3. TypeError: Occurs when incompatible data types used.
+-------------
+Ex: "10" + 5
+- You are trying to perform operations on in-compatible types
+4. KeyError : If key not available
+-------------
+d1 = {101:'Venkat', 102:'Vamsi'}
+print(d1[103])
+- You are trying to get 103 value, but you don’t have 103 key
+5. IndexError : Occurs when index unavailable.
+---------------
+a = [5, 7, 4]
+print(a[3])
+
+- You are trying to get 3rd index value, which is not available
+6. ZeroDivisionError: Occurs when you are divide a value with 0
+---------------------
+
+a = 10
+b = 0
+c = a//b
+
+- You trying to divide a value with 0
+7. PermissionError : No permission to open files
+---------------------
+f = open("secure.txt", "w")
+- You are trying to modify secure.txt file which you don’t have permission
+8. ModuleNotFoundError : Python cannot find the module you are trying to
+use.
+
+import pandas
+
+- You are trying to import pandas, but if it is not install then we will get this error
+9. MemoryError: If you try to read data from huge files at a time
+---------------
+So System RAM becomes Insufficient
+Ex: f.read( )
+10.UnicodeDecodeError: Consider a file saved with utf-16 format but we are
+-----------------------
+trying to encode with utf-8 , then we will get this Error
+
+humans use:
+A, B, C, ₹, తెలుగు, ह िंदी, 😊, 5
+- So encoding converts human-readable characters into machine-readable bytes.
+  UTF-8(Unicode Transformation Format-8 bit) is one such encoding technique.
+  Ex: A stored in UTF-8 as 01000001
+11.ConnectionError:
+---------------------
+- A Connection Error occurs when your Python program tries to connect to:
+  Database/ API / Server / Internet / Cloud Service / etc...
+- but the connection fails.
+import mysql.connector
+conn = mysql.connector.connect(
+host='localhost',
+user='root',
+password='wrongpassword',
+database='company'
+)
+Output: Access denied for user 'root'
+Reason: password wrong
+
+Ex2: import requests
+requests.get("https://abcxyz123.com")
+- You are trying to access an website which is not available or invalid url or
+  internet issue then will get Error
+
+  
