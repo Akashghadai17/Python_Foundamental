@@ -1,11 +1,10 @@
 What is Python?
 ---------------
- Python is a Functional Programming Language
- Python is an Object-Oriented Programming Language
- Python is a High-Level Programming Language
- Python is a Interpreter Language
- Python is a scripting Language
- etc....
+- Python is a Functional Programming Language
+- Python is an Object-Oriented Programming Language
+- Python is a High-Level Programming Language
+- Python is a Interpreter Language
+- Python is a scripting Language
 
 → Desktop App — (Object-Oriented Programming, High-Level Programming Lang)
 → IoT — (Scripting Language, High-Level Programming Lang)
@@ -50,12 +49,12 @@ We can write scripts in 3 ways
 
 Realtime Applications by using Python:
 --------------------------------------
- Instagram and Spotify developed by using Python
- Netflix uses Python for Analyzing user Data
- Google uses python for AI models
- Daily Report automated in companies like sending emails
- Moving data from Database-->cleaning-->loading into BI tools
- Etc.
+- Instagram and Spotify developed by using Python
+- Netflix uses Python for Analyzing user Data
+- Google uses python for AI models
+- Daily Report automated in companies like sending emails
+- Moving data from Database-->cleaning-->loading into BI tools
+- Etc.
 
 Tokens
 ------
