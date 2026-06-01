@@ -1,0 +1,233 @@
+Exception Handling
+-------------------
+- Error handling called exception handling.
+- Handling of exception is called as Exception handling.
+
+try → Write the code that may cause an error.
+except → Handles the error if it occurs.
+else → Runs if no error occurs.
+finally → Always runs, whether there is an error or not.
+
+If error occur
+---------------
+try
+except
+finally
+
+If error not occur
+------------------
+try 
+else
+finally
+
+Example-1
+-----------
+a=int(input("Enter any num: "))
+b=int(input("Enter ant num: "))
+try:
+    c=a//b
+    print(c)
+except:
+    print("Error occur")
+finally:
+    print("Thank you")
+output
+-------
+Enter any num: 10
+Enter ant num: 0
+Error occur
+Thank you
+
+Example-2 (Using exception)
+----------
+-Exception as e -Used for find which type of error it is.
+- Exception(Is a class name)
+a=int(input("Enter any num: "))
+b=int(input("Enter ant num: "))
+try:
+    c=a//b
+    print(c)
+except Exception as e:
+    print(e)
+finally:
+    print("Thank you")
+output
+------
+Enter any num: 10
+Enter ant num: 0
+integer division or modulo by zero
+Thank you
+
+Example-3(If any Value Error occur then how to handle?)
+----------
+try:
+    a = int(input("Enter any num: "))
+    b = int(input("Enter ant num: "))
+    c=a//b
+    print(c)
+except Exception as e:
+    print(e)
+finally:
+    print("Thank you")
+Output
+------
+Enter any num: 10
+Enter ant num: 0
+integer division or modulo by zero
+Thank you
+
+Example-3(If ZeroDivisionError occur then only run this except block)
+------------
+a = int(input("Enter any num: "))
+b = int(input("Enter ant num: "))
+try:
+    c=a//b
+    print(c)
+except ZeroDivisionError as e   :
+    print(f"B value is zero {e}")
+finally:
+    print("Thank you")
+Output
+------
+Enter any num: 10
+Enter ant num: 0
+B value is zero integer division or modulo by zero
+Thank you
+
+Multiple Exception
+-------------------
+- Some time we have more than one exception in our program.
+- So we have to write multiple except block.
+
+try:
+    a = int(input("Enter any num: "))
+    b = int(input("Enter ant num: "))
+    c=a//b
+    print(c)
+except ValueError as e:
+    print(f"The value is not integer type ")
+    print(e)
+except ZeroDivisionError as e   :
+    print(f"B value is zero ")
+    print(e)
+finally:
+    print("Thank you")
+
+Output1(Approch-1)
+------------------
+Enter any num: 103
+Enter ant num: 0
+B value is zero 
+integer division or modulo by zero
+Thank you
+
+Output2(Approch-2)
+------------------
+Enter any num: 10
+Enter ant num: 2.5
+The value is not integer type 
+invalid literal for int() with base 10: '2.5'
+Thank you
+
+Q)- Some time we have more than one exception in our programn with we don't know the error?
+
+l1=[1,20]
+try:
+    a = int(input("Enter any num: "))
+    b = int(input("Enter ant num: "))
+    c=a//b + l1[2]
+    print(c)
+except ValueError as e:
+    print(f"The value is not integer type ")
+    print(e)
+except ZeroDivisionError as e   :
+    print(f"B value is zero ")
+    print(e)
+except Exception as e:
+    print(e)
+finally:
+    print("Thank you")
+
+Output
+------
+Enter any num: 10
+Enter ant num: 2
+list index out of range
+Thank you
+
+With else block(If no error then run else block)
+-------------------------------------------------
+l1=[1,20]
+try:
+    a = int(input("Enter any num: "))
+    b = int(input("Enter ant num: "))
+    c=a//b + l1[1]
+except Exception as e:
+    print(e)
+else:
+    print(c)
+finally:
+    print("Thank you")
+Output
+------
+Enter any num: 10
+Enter ant num: 2
+25
+Thank you
+
+Nested try
+----------
+- try block inside another try block is called as Nested try block.
+syntax;
+try:
+    statement-1
+    try:
+        statement-2
+    except:
+        statement-3
+except:
+      statement-4
+
+Example
+------
+try:
+    a = int(input("Enter any num: "))
+    b = int(input("Enter ant num: "))
+    try:
+        c = a // b
+        print(c)
+    except ZeroDivisionError as e:
+        print(e)
+except ValueError as e:
+    print(e)
+except Exception as e:
+    print(e)
+finally:
+    print("Thank you")
+
+Output
+-----
+Enter any num: 10
+Enter ant num: 0
+integer division or modulo by zero
+Thank you
+
+W. a. p to read age of a person, if age is less than zero then raise Error
+otherwise display message ‘Application is Processed’
+----------------------------------------------------------
+class InvalidAgeError(Exception):
+    def __init__(self,msg):
+        self.msg = msg
+try:
+    age = int(input('Enter your age : '))
+    if age<0:
+        raise InvalidAgeError('Age should be +ve Number ')
+    else:
+        print('Valid Age.. We will process your Application')
+except InvalidAgeError as e:
+    print(e)
+Output
+------
+Enter your age : 14
+Valid Age.. We will process your Application
+
