@@ -1,0 +1,36 @@
+- In Variables what data we saved that data will be deleted once program is finished.
+- When we save for data permanently then go for files.
+File
+----
+- A file is a container used to store data permanently
+- Files help us store data even after program execution ends
+
+Files are 2 types, they are
+1. Text File
+2. Binary Files
+
+1. Text File
+-------------
+i)Text file
+- Text file = filename.txt
+
+ii)CSV file
+- Sometime we will be called CSV( Comma Separated Values) file.
+- CSV example
+  ------------
+  eid,ename,sal
+  101,varma,32000.0
+  102,sharma,28000.0
+- Everything separated with comma so it is called CSV file.
+- CSV file= filename.csv
+
+iii)Excel File
+---------------
+- Excel file = filename.xlsx
+
+iv)json file
+-------------
+- Json = filename.json
+- Json store data in form of key,value = Dictionary format.
+- In real time if you want to move data from one location to anathor internally they use json.
+
